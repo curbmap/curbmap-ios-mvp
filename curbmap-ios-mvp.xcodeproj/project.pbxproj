@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53892066224C001F602C /* AppDelegate.swift */; };
+		D5EF538C2066224D001F602C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF538B2066224D001F602C /* ViewController.swift */; };
+		D5EF538F2066224D001F602C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF538D2066224D001F602C /* Main.storyboard */; };
+		D5EF53912066224D001F602C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5EF53902066224D001F602C /* Assets.xcassets */; };
+		D5EF53942066224D001F602C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF53922066224D001F602C /* LaunchScreen.storyboard */; };
+		D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF539E2066224D001F602C /* curbmap_ios_mvpTests.swift */; };
+		D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5EF539B2066224D001F602C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5EF537E2066224C001F602C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5EF53852066224C001F602C;
+			remoteInfo = "curbmap-ios-mvp";
+		};
+		D5EF53A62066224D001F602C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5EF537E2066224C001F602C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5EF53852066224C001F602C;
+			remoteInfo = "curbmap-ios-mvp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5EF53862066224C001F602C /* curbmap-ios-mvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "curbmap-ios-mvp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5EF53892066224C001F602C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5EF538B2066224D001F602C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D5EF538E2066224D001F602C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5EF53902066224D001F602C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5EF53932066224D001F602C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D5EF53952066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5EF539A2066224D001F602C /* curbmap-ios-mvpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "curbmap-ios-mvpTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5EF539E2066224D001F602C /* curbmap_ios_mvpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curbmap_ios_mvpTests.swift; sourceTree = "<group>"; };
+		D5EF53A02066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5EF53A52066224D001F602C /* curbmap-ios-mvpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "curbmap-ios-mvpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curbmap_ios_mvpUITests.swift; sourceTree = "<group>"; };
+		D5EF53AB2066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5EF53832066224C001F602C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EF53972066224D001F602C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EF53A22066224D001F602C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5EF537D2066224C001F602C = {
+			isa = PBXGroup;
+			children = (
+				D5EF53882066224C001F602C /* curbmap-ios-mvp */,
+				D5EF539D2066224D001F602C /* curbmap-ios-mvpTests */,
+				D5EF53A82066224D001F602C /* curbmap-ios-mvpUITests */,
+				D5EF53872066224C001F602C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5EF53872066224C001F602C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF53862066224C001F602C /* curbmap-ios-mvp.app */,
+				D5EF539A2066224D001F602C /* curbmap-ios-mvpTests.xctest */,
+				D5EF53A52066224D001F602C /* curbmap-ios-mvpUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5EF53882066224C001F602C /* curbmap-ios-mvp */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF53892066224C001F602C /* AppDelegate.swift */,
+				D5EF538B2066224D001F602C /* ViewController.swift */,
+				D5EF538D2066224D001F602C /* Main.storyboard */,
+				D5EF53902066224D001F602C /* Assets.xcassets */,
+				D5EF53922066224D001F602C /* LaunchScreen.storyboard */,
+				D5EF53952066224D001F602C /* Info.plist */,
+			);
+			path = "curbmap-ios-mvp";
+			sourceTree = "<group>";
+		};
+		D5EF539D2066224D001F602C /* curbmap-ios-mvpTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF539E2066224D001F602C /* curbmap_ios_mvpTests.swift */,
+				D5EF53A02066224D001F602C /* Info.plist */,
+			);
+			path = "curbmap-ios-mvpTests";
+			sourceTree = "<group>";
+		};
+		D5EF53A82066224D001F602C /* curbmap-ios-mvpUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */,
+				D5EF53AB2066224D001F602C /* Info.plist */,
+			);
+			path = "curbmap-ios-mvpUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5EF53852066224C001F602C /* curbmap-ios-mvp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5EF53AE2066224D001F602C /* Build configuration list for PBXNativeTarget "curbmap-ios-mvp" */;
+			buildPhases = (
+				D5EF53822066224C001F602C /* Sources */,
+				D5EF53832066224C001F602C /* Frameworks */,
+				D5EF53842066224C001F602C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "curbmap-ios-mvp";
+			productName = "curbmap-ios-mvp";
+			productReference = D5EF53862066224C001F602C /* curbmap-ios-mvp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5EF53992066224D001F602C /* curbmap-ios-mvpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5EF53B12066224D001F602C /* Build configuration list for PBXNativeTarget "curbmap-ios-mvpTests" */;
+			buildPhases = (
+				D5EF53962066224D001F602C /* Sources */,
+				D5EF53972066224D001F602C /* Frameworks */,
+				D5EF53982066224D001F602C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5EF539C2066224D001F602C /* PBXTargetDependency */,
+			);
+			name = "curbmap-ios-mvpTests";
+			productName = "curbmap-ios-mvpTests";
+			productReference = D5EF539A2066224D001F602C /* curbmap-ios-mvpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5EF53A42066224D001F602C /* curbmap-ios-mvpUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5EF53B42066224D001F602C /* Build configuration list for PBXNativeTarget "curbmap-ios-mvpUITests" */;
+			buildPhases = (
+				D5EF53A12066224D001F602C /* Sources */,
+				D5EF53A22066224D001F602C /* Frameworks */,
+				D5EF53A32066224D001F602C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5EF53A72066224D001F602C /* PBXTargetDependency */,
+			);
+			name = "curbmap-ios-mvpUITests";
+			productName = "curbmap-ios-mvpUITests";
+			productReference = D5EF53A52066224D001F602C /* curbmap-ios-mvpUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5EF537E2066224C001F602C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Eli Selkin";
+				TargetAttributes = {
+					D5EF53852066224C001F602C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					D5EF53992066224D001F602C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D5EF53852066224C001F602C;
+					};
+					D5EF53A42066224D001F602C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D5EF53852066224C001F602C;
+					};
+				};
+			};
+			buildConfigurationList = D5EF53812066224C001F602C /* Build configuration list for PBXProject "curbmap-ios-mvp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5EF537D2066224C001F602C;
+			productRefGroup = D5EF53872066224C001F602C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5EF53852066224C001F602C /* curbmap-ios-mvp */,
+				D5EF53992066224D001F602C /* curbmap-ios-mvpTests */,
+				D5EF53A42066224D001F602C /* curbmap-ios-mvpUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5EF53842066224C001F602C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EF53942066224D001F602C /* LaunchScreen.storyboard in Resources */,
+				D5EF53912066224D001F602C /* Assets.xcassets in Resources */,
+				D5EF538F2066224D001F602C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EF53982066224D001F602C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EF53A32066224D001F602C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5EF53822066224C001F602C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EF538C2066224D001F602C /* ViewController.swift in Sources */,
+				D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EF53962066224D001F602C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5EF53A12066224D001F602C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5EF539C2066224D001F602C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5EF53852066224C001F602C /* curbmap-ios-mvp */;
+			targetProxy = D5EF539B2066224D001F602C /* PBXContainerItemProxy */;
+		};
+		D5EF53A72066224D001F602C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5EF53852066224C001F602C /* curbmap-ios-mvp */;
+			targetProxy = D5EF53A62066224D001F602C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5EF538D2066224D001F602C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5EF538E2066224D001F602C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D5EF53922066224D001F602C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5EF53932066224D001F602C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5EF53AC2066224D001F602C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5EF53AD2066224D001F602C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5EF53AF2066224D001F602C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
+				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5EF53B02066224D001F602C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
+				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D5EF53B22066224D001F602C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
+				INFOPLIST_FILE = "curbmap-ios-mvpTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvpTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/curbmap-ios-mvp.app/curbmap-ios-mvp";
+			};
+			name = Debug;
+		};
+		D5EF53B32066224D001F602C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
+				INFOPLIST_FILE = "curbmap-ios-mvpTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvpTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/curbmap-ios-mvp.app/curbmap-ios-mvp";
+			};
+			name = Release;
+		};
+		D5EF53B52066224D001F602C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
+				INFOPLIST_FILE = "curbmap-ios-mvpUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvpUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "curbmap-ios-mvp";
+			};
+			name = Debug;
+		};
+		D5EF53B62066224D001F602C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
+				INFOPLIST_FILE = "curbmap-ios-mvpUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvpUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "curbmap-ios-mvp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5EF53812066224C001F602C /* Build configuration list for PBXProject "curbmap-ios-mvp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EF53AC2066224D001F602C /* Debug */,
+				D5EF53AD2066224D001F602C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5EF53AE2066224D001F602C /* Build configuration list for PBXNativeTarget "curbmap-ios-mvp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EF53AF2066224D001F602C /* Debug */,
+				D5EF53B02066224D001F602C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5EF53B12066224D001F602C /* Build configuration list for PBXNativeTarget "curbmap-ios-mvpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EF53B22066224D001F602C /* Debug */,
+				D5EF53B32066224D001F602C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5EF53B42066224D001F602C /* Build configuration list for PBXNativeTarget "curbmap-ios-mvpUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EF53B52066224D001F602C /* Debug */,
+				D5EF53B62066224D001F602C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5EF537E2066224C001F602C /* Project object */;
+}
