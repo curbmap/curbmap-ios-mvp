@@ -14,6 +14,7 @@
 		D5EF53942066224D001F602C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF53922066224D001F602C /* LaunchScreen.storyboard */; };
 		D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF539E2066224D001F602C /* curbmap_ios_mvpTests.swift */; };
 		D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */; };
+		D5EF53BA206622BD001F602C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF53B9206622BD001F602C /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		D5EF53A52066224D001F602C /* curbmap-ios-mvpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "curbmap-ios-mvpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curbmap_ios_mvpUITests.swift; sourceTree = "<group>"; };
 		D5EF53AB2066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "curbmap-ios-mvp.entitlements"; sourceTree = "<group>"; };
+		D5EF53B9206622BD001F602C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5EF53BA206622BD001F602C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 				D5EF539D2066224D001F602C /* curbmap-ios-mvpTests */,
 				D5EF53A82066224D001F602C /* curbmap-ios-mvpUITests */,
 				D5EF53872066224C001F602C /* Products */,
+				D5EF53B8206622BD001F602C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +102,7 @@
 		D5EF53882066224C001F602C /* curbmap-ios-mvp */ = {
 			isa = PBXGroup;
 			children = (
+				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
 				D5EF53892066224C001F602C /* AppDelegate.swift */,
 				D5EF538B2066224D001F602C /* ViewController.swift */,
 				D5EF538D2066224D001F602C /* Main.storyboard */,
@@ -123,6 +129,14 @@
 				D5EF53AB2066224D001F602C /* Info.plist */,
 			);
 			path = "curbmap-ios-mvpUITests";
+			sourceTree = "<group>";
+		};
+		D5EF53B8206622BD001F602C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF53B9206622BD001F602C /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,17 @@
 					D5EF53852066224C001F602C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					D5EF53992066224D001F602C = {
 						CreatedOnToolsVersion = 9.2;
@@ -426,14 +451,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "curbmap-ios-mvp/curbmap-ios-mvp.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNKFCAS44G;
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -441,14 +468,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "curbmap-ios-mvp/curbmap-ios-mvp.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CNKFCAS44G;
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
