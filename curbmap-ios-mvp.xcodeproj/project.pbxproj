@@ -10,6 +10,9 @@
 		629B038092389DE24D3CB508 /* Pods_curbmap_ios_mvp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27270B6931A65C090D81A659 /* Pods_curbmap_ios_mvp.framework */; };
 		95417FF24EEA3003DAC319BE /* Pods_curbmap_ios_mvpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974D7A38275B954592532363 /* Pods_curbmap_ios_mvpTests.framework */; };
 		C364445CFCF0A89B517DE76E /* Pods_curbmap_ios_mvpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8EC1F2742002BD49E6AB6F /* Pods_curbmap_ios_mvpUITests.framework */; };
+		D50CC4EF20683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
+		D50CC4F020683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
+		D50CC4F120683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
 		D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53892066224C001F602C /* AppDelegate.swift */; };
 		D5EF538C2066224D001F602C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF538B2066224D001F602C /* SignUpViewController.swift */; };
 		D5EF538F2066224D001F602C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF538D2066224D001F602C /* Main.storyboard */; };
@@ -47,6 +50,7 @@
 		82F365EA00BFB88242C2E0F5 /* Pods-curbmap-ios-mvpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpTests/Pods-curbmap-ios-mvpTests.debug.xcconfig"; sourceTree = "<group>"; };
 		974D7A38275B954592532363 /* Pods_curbmap_ios_mvpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_curbmap_ios_mvpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7870AFE72127AC6298E16D1 /* Pods-curbmap-ios-mvpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpUITests/Pods-curbmap-ios-mvpUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D50CC4EE20683E6F007A37E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D5EF53862066224C001F602C /* curbmap-ios-mvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "curbmap-ios-mvp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF53892066224C001F602C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5EF538B2066224D001F602C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,14 @@
 				C7870AFE72127AC6298E16D1 /* Pods-curbmap-ios-mvpUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D50CC4F2206840D1007A37E3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D50CC4EE20683E6F007A37E3 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		D5EF537D2066224C001F602C = {
@@ -174,6 +186,7 @@
 		F9AEE6E5206724730030B2E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D50CC4F2206840D1007A37E3 /* User */,
 				D5EF53922066224D001F602C /* LaunchScreen.storyboard */,
 				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
 				D5EF53892066224C001F602C /* AppDelegate.swift */,
@@ -523,6 +536,7 @@
 			files = (
 				D5EF538C2066224D001F602C /* SignUpViewController.swift in Sources */,
 				D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */,
+				D50CC4EF20683E6F007A37E3 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50CC4F020683E6F007A37E3 /* User.swift in Sources */,
 				D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50CC4F120683E6F007A37E3 /* User.swift in Sources */,
 				D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
