@@ -11,13 +11,14 @@
 		95417FF24EEA3003DAC319BE /* Pods_curbmap_ios_mvpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974D7A38275B954592532363 /* Pods_curbmap_ios_mvpTests.framework */; };
 		C364445CFCF0A89B517DE76E /* Pods_curbmap_ios_mvpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8EC1F2742002BD49E6AB6F /* Pods_curbmap_ios_mvpUITests.framework */; };
 		D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53892066224C001F602C /* AppDelegate.swift */; };
-		D5EF538C2066224D001F602C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF538B2066224D001F602C /* ViewController.swift */; };
+		D5EF538C2066224D001F602C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF538B2066224D001F602C /* SignUpViewController.swift */; };
 		D5EF538F2066224D001F602C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF538D2066224D001F602C /* Main.storyboard */; };
 		D5EF53912066224D001F602C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5EF53902066224D001F602C /* Assets.xcassets */; };
 		D5EF53942066224D001F602C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF53922066224D001F602C /* LaunchScreen.storyboard */; };
 		D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF539E2066224D001F602C /* curbmap_ios_mvpTests.swift */; };
 		D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */; };
 		D5EF53BA206622BD001F602C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF53B9206622BD001F602C /* MapKit.framework */; };
+		F9AEE6E920672EB90030B2E8 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = F9AEE6E820672EB90030B2E8 /* Poppins */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,7 @@
 		C7870AFE72127AC6298E16D1 /* Pods-curbmap-ios-mvpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpUITests/Pods-curbmap-ios-mvpUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D5EF53862066224C001F602C /* curbmap-ios-mvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "curbmap-ios-mvp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF53892066224C001F602C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5EF538B2066224D001F602C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D5EF538B2066224D001F602C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D5EF538E2066224D001F602C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5EF53902066224D001F602C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5EF53932066224D001F602C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		D5EF53AB2066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "curbmap-ios-mvp.entitlements"; sourceTree = "<group>"; };
 		D5EF53B9206622BD001F602C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F9AEE6E820672EB90030B2E8 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 		FE1A8CAFD27D8D7ED785448C /* Pods-curbmap-ios-mvpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpTests/Pods-curbmap-ios-mvpTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,12 +133,10 @@
 		D5EF53882066224C001F602C /* curbmap-ios-mvp */ = {
 			isa = PBXGroup;
 			children = (
-				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
-				D5EF53892066224C001F602C /* AppDelegate.swift */,
-				D5EF538B2066224D001F602C /* ViewController.swift */,
-				D5EF538D2066224D001F602C /* Main.storyboard */,
-				D5EF53902066224D001F602C /* Assets.xcassets */,
-				D5EF53922066224D001F602C /* LaunchScreen.storyboard */,
+				F9AEE6E820672EB90030B2E8 /* Poppins */,
+				F9AEE6E7206724B00030B2E8 /* View */,
+				F9AEE6E6206724A60030B2E8 /* Controllers */,
+				F9AEE6E5206724730030B2E8 /* Supporting Files */,
 				D5EF53952066224D001F602C /* Info.plist */,
 			);
 			path = "curbmap-ios-mvp";
@@ -169,6 +169,33 @@
 				4D8EC1F2742002BD49E6AB6F /* Pods_curbmap_ios_mvpUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9AEE6E5206724730030B2E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF53922066224D001F602C /* LaunchScreen.storyboard */,
+				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
+				D5EF53892066224C001F602C /* AppDelegate.swift */,
+				D5EF53902066224D001F602C /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9AEE6E6206724A60030B2E8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF538B2066224D001F602C /* SignUpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F9AEE6E7206724B00030B2E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF538D2066224D001F602C /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AEE6E920672EB90030B2E8 /* Poppins in Resources */,
 				D5EF53942066224D001F602C /* LaunchScreen.storyboard in Resources */,
 				D5EF53912066224D001F602C /* Assets.xcassets in Resources */,
 				D5EF538F2066224D001F602C /* Main.storyboard in Resources */,
@@ -493,7 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5EF538C2066224D001F602C /* ViewController.swift in Sources */,
+				D5EF538C2066224D001F602C /* SignUpViewController.swift in Sources */,
 				D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
