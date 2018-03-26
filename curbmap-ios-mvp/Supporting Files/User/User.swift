@@ -112,7 +112,6 @@ class User {
             "Content-Type": "application/x-www-form-urlencoded"
         ]
         
-        var full_dictionary: [String: Any] = ["success": false]
         Alamofire.request(self.auth_host+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { [weak self] response in
             guard self != nil else { return }
             if let response_dict = response.result.value as? [String: Any] {
@@ -143,7 +142,6 @@ class User {
             "Content-Type": "application/x-www-form-urlencoded"
         ]
         
-        var full_dictionary: [String: Any] = ["success": false]
         Alamofire.request(self.auth_host+"/signup", method: .post, parameters: parameters, headers: headers).responseJSON { [weak self] response in
             guard self != nil else { return }
             if var json = response.result.value as? [String: Int] {
@@ -163,7 +161,7 @@ class User {
                 if var json = response.result.value as? [String: Bool] {
                     if (json["success"] == true) {
                         self?.loggedIn = false
-                        self?.set_badge(badge: "")
+                        self?.set_badge(badge: [false])
                         self?.set_username(username: "curbmaptest")
                         self?.set_password(password: "TestCurbm@p1")
                         self?.set_token(token: nil)
@@ -185,7 +183,7 @@ class User {
     
     // MARK: - Process response when a user is logged in
     func processResponse(response_dict: [String: Any], callback: (_ result: Int)->Void) {
-        self.set_badge(badge: response_dict["badge"] as! String)
+        self.set_badge(badge: response_dict["badge"] as! [Bool])
         self.set_score(score: (Int64)((response_dict["score"] as! NSString).intValue))
         self.set_token(token: response_dict["token"] as? String)
         self.set_exp_date(date: Calendar.current.date(byAdding: .day, value: 1, to: Date())!);

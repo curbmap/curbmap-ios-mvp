@@ -64,7 +64,6 @@
 		D5EF53A52066224D001F602C /* curbmap-ios-mvpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "curbmap-ios-mvpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curbmap_ios_mvpUITests.swift; sourceTree = "<group>"; };
 		D5EF53AB2066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "curbmap-ios-mvp.entitlements"; sourceTree = "<group>"; };
 		D5EF53B9206622BD001F602C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F9AEE6E820672EB90030B2E8 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 		FE1A8CAFD27D8D7ED785448C /* Pods-curbmap-ios-mvpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpTests/Pods-curbmap-ios-mvpTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,7 +187,6 @@
 			children = (
 				D50CC4F2206840D1007A37E3 /* User */,
 				D5EF53922066224D001F602C /* LaunchScreen.storyboard */,
-				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
 				D5EF53892066224C001F602C /* AppDelegate.swift */,
 				D5EF53902066224D001F602C /* Assets.xcassets */,
 			);
@@ -288,7 +286,7 @@
 				TargetAttributes = {
 					D5EF53852066224C001F602C = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -297,7 +295,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -705,14 +703,14 @@
 			baseConfigurationReference = 41BE27CEEC9A7125527D724D /* Pods-curbmap-ios-mvp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "curbmap-ios-mvp/curbmap-ios-mvp.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNKFCAS44G;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -723,14 +721,14 @@
 			baseConfigurationReference = 354F8FA736657A76EA3E6AA1 /* Pods-curbmap-ios-mvp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "curbmap-ios-mvp/curbmap-ios-mvp.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNKFCAS44G;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
