@@ -138,6 +138,7 @@
 				F9AEE6E6206724A60030B2E8 /* Controllers */,
 				F9AEE6E5206724730030B2E8 /* Supporting Files */,
 				D5EF53952066224D001F602C /* Info.plist */,
+				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
 			);
 			path = "curbmap-ios-mvp";
 			sourceTree = "<group>";
@@ -175,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				D5EF53922066224D001F602C /* LaunchScreen.storyboard */,
-				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
 				D5EF53892066224C001F602C /* AppDelegate.swift */,
 				D5EF53902066224D001F602C /* Assets.xcassets */,
 			);
@@ -275,7 +275,7 @@
 				TargetAttributes = {
 					D5EF53852066224C001F602C = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -284,7 +284,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -689,14 +689,16 @@
 			baseConfigurationReference = 41BE27CEEC9A7125527D724D /* Pods-curbmap-ios-mvp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "curbmap-ios-mvp/curbmap-ios-mvp.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNKFCAS44G;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp001";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -707,14 +709,16 @@
 			baseConfigurationReference = 354F8FA736657A76EA3E6AA1 /* Pods-curbmap-ios-mvp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "curbmap-ios-mvp/curbmap-ios-mvp.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNKFCAS44G;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp001";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
