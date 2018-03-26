@@ -149,6 +149,7 @@
 				F9AEE6E6206724A60030B2E8 /* Controllers */,
 				F9AEE6E5206724730030B2E8 /* Supporting Files */,
 				D5EF53952066224D001F602C /* Info.plist */,
+				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
 			);
 			path = "curbmap-ios-mvp";
 			sourceTree = "<group>";
@@ -708,7 +709,7 @@
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp001";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -726,7 +727,7 @@
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.curbmap.curbmap-ios-mvp001";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
