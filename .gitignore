@@ -41,6 +41,9 @@ playground.xcworkspace
 # Package.resolved
 .build/
 
+# Ignore minor storyboard changes
+.DS_Store
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
