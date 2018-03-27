@@ -64,7 +64,6 @@
 		D5EF53A52066224D001F602C /* curbmap-ios-mvpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "curbmap-ios-mvpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curbmap_ios_mvpUITests.swift; sourceTree = "<group>"; };
 		D5EF53AB2066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "curbmap-ios-mvp.entitlements"; sourceTree = "<group>"; };
 		D5EF53B9206622BD001F602C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F9AEE6E820672EB90030B2E8 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 		FE1A8CAFD27D8D7ED785448C /* Pods-curbmap-ios-mvpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpTests/Pods-curbmap-ios-mvpTests.release.xcconfig"; sourceTree = "<group>"; };

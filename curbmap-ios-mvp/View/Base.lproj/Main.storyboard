@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="630"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svt-A9-QFy" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="757"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="752"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curbmaplogo" translatesAutoresizingMaskIntoConstraints="NO" id="m7L-L5-Kq7">
                                                 <rect key="frame" x="50" y="30" width="275" height="310"/>
@@ -51,7 +51,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8B-BD-mCl">
-                                                <rect key="frame" x="50" y="510" width="275" height="47"/>
+                                                <rect key="frame" x="50" y="510" width="275" height="42"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="25"/>
                                                 <state key="normal" title="LOG IN ">
                                                     <color key="titleColor" red="0.18501663208007812" green="0.65008234977722168" blue="0.75519317388534546" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
