@@ -13,6 +13,8 @@
 		D50CC4EF20683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
 		D50CC4F020683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
 		D50CC4F120683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
+		D5E75A54206AE9A500A58E3F /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E75A53206AE9A500A58E3F /* AuthServices.swift */; };
+		D5E75A55206AE9A500A58E3F /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E75A53206AE9A500A58E3F /* AuthServices.swift */; };
 		D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53892066224C001F602C /* AppDelegate.swift */; };
 		D5EF538C2066224D001F602C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF538B2066224D001F602C /* LoginViewController.swift */; };
 		D5EF538F2066224D001F602C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF538D2066224D001F602C /* Main.storyboard */; };
@@ -51,6 +53,7 @@
 		974D7A38275B954592532363 /* Pods_curbmap_ios_mvpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_curbmap_ios_mvpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7870AFE72127AC6298E16D1 /* Pods-curbmap-ios-mvpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpUITests/Pods-curbmap-ios-mvpUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D50CC4EE20683E6F007A37E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D5E75A53206AE9A500A58E3F /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		D5EF53862066224C001F602C /* curbmap-ios-mvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "curbmap-ios-mvp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF53892066224C001F602C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5EF538B2066224D001F602C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -114,9 +117,24 @@
 		D50CC4F2206840D1007A37E3 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				D50CC4EE20683E6F007A37E3 /* User.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		D5E75A51206AE96600A58E3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D50CC4EE20683E6F007A37E3 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5E75A52206AE96D00A58E3F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D5E75A53206AE9A500A58E3F /* AuthServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D5EF537D2066224C001F602C = {
@@ -144,6 +162,8 @@
 		D5EF53882066224C001F602C /* curbmap-ios-mvp */ = {
 			isa = PBXGroup;
 			children = (
+				D5E75A52206AE96D00A58E3F /* Services */,
+				D5E75A51206AE96600A58E3F /* Model */,
 				F9AEE6E7206724B00030B2E8 /* View */,
 				F9AEE6E6206724A60030B2E8 /* Controllers */,
 				F9AEE6E5206724730030B2E8 /* Supporting Files */,
@@ -535,6 +555,7 @@
 				D5EF538C2066224D001F602C /* LoginViewController.swift in Sources */,
 				D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */,
 				D50CC4EF20683E6F007A37E3 /* User.swift in Sources */,
+				D5E75A54206AE9A500A58E3F /* AuthServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E75A55206AE9A500A58E3F /* AuthServices.swift in Sources */,
 				D50CC4F020683E6F007A37E3 /* User.swift in Sources */,
 				D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */,
 			);
