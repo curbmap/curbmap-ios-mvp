@@ -21,16 +21,20 @@ class curbmap_ios_mvpTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testUserLogin() {
+        func respondToLogin(result: Int){
+            XCTAssert(result == 1) // logging in as test user
+        }
+        login(callback: respondToLogin)
+        // This is an example of a performance test case.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testUserLogout() {
+        func respondToLogout(result: Int){
+            // result will actually be a login of test user
+            XCTAssert(result == 1);
         }
+        logout(callback: respondToLogout, retries: 0, retriesMax: 3)
     }
     
 }
