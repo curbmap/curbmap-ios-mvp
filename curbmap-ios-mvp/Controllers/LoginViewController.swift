@@ -18,29 +18,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var activeTextField: UITextField?
     
     let defaultCenter = NotificationCenter.default
+    let UIKeyboardFrameEndUserInfoKey = "UIKeyboardFrameEndUserInfoKey"
+
     
+    // MARK: - View Configs
     override func viewDidLoad() {
         // Add observer for keyboard notification
         registerForKeyboardNotifications()
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         // disable scrolling
         scrollView.isScrollEnabled = false
     }
     
-    // Constants
-    let UIKeyboardFrameEndUserInfoKey = "UIKeyboardFrameEndUserInfoKey"
-    
-    
+    // MARK: - Keyboards
     func registerForKeyboardNotifications() {
         // Listens for when keyboard shows itself and when hiding
         defaultCenter.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
         defaultCenter.addObserver(self, selector: #selector(keyboardWasHidden(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
-    
-    
     
     @objc func keyboardWasShown(notification: NSNotification) {
         // Enable scrolling
@@ -52,15 +49,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
            let keyboardHeight = keyboardFrame.size.height
             // move contentView frame up by keyboard size
             contentView.frame.origin.y -= keyboardHeight
-            
         }
     }
     
     @objc func keyboardWasHidden(notification: NSNotification) {
-        
+        // move contentView frame to its origin
+        contentView.frame.origin.y = 0.0
     }
     
-    
+    // MARK: - TextField Delegate methods
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // track textfield and resign first resopnder status
         activeTextField = textField
@@ -70,10 +67,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         activeTextField = nil
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Dismiss keyboard when user hit return button
+        textField.resignFirstResponder()
+        return true
+        // TODO: To implement logic so keyboard can be dismissed just by tapping on the view, instead of hitting "done" button.
+    }
     
     
-    
-    
+    // MARK: - User Action
     @IBAction func loginButtonDidPressed(_ sender: UIButton) {
         
         // TODO: call login service and login user

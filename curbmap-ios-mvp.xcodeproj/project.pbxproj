@@ -144,12 +144,10 @@
 		D5EF53882066224C001F602C /* curbmap-ios-mvp */ = {
 			isa = PBXGroup;
 			children = (
-				F9AEE6E820672EB90030B2E8 /* Poppins */,
 				F9AEE6E7206724B00030B2E8 /* View */,
 				F9AEE6E6206724A60030B2E8 /* Controllers */,
 				F9AEE6E5206724730030B2E8 /* Supporting Files */,
 				D5EF53952066224D001F602C /* Info.plist */,
-				D5EF53B720662289001F602C /* curbmap-ios-mvp.entitlements */,
 			);
 			path = "curbmap-ios-mvp";
 			sourceTree = "<group>";
@@ -186,6 +184,7 @@
 		F9AEE6E5206724730030B2E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F9AEE6E820672EB90030B2E8 /* Poppins */,
 				D50CC4F2206840D1007A37E3 /* User */,
 				D5EF53922066224D001F602C /* LaunchScreen.storyboard */,
 				D5EF53892066224C001F602C /* AppDelegate.swift */,

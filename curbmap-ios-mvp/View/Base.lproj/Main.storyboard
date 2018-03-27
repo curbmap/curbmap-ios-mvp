@@ -36,7 +36,7 @@
                                                 <rect key="frame" x="50" y="380" width="275" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="username"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="msb-XI-Tx5"/>
                                                 </connections>

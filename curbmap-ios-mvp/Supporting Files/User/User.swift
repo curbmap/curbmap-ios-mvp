@@ -98,40 +98,7 @@ class User {
     }
     
     // MARK: - Login
-<<<<<<< HEAD
-//    func login(callback: @escaping (_ result: Int)->Void) -> Void {
-//        let parameters = [
-//            "username": self.username,
-//            "password": self.password
-//        ]
-//        if (self.username == "" || self.password == "") {
-//            callback(0)
-//            return
-//        }
-//
-//        let headers = [
-//            "Content-Type": "application/x-www-form-urlencoded"
-//        ]
-//
-//        var full_dictionary: [String: Any] = ["success": false]
-//        Alamofire.request(self.auth_host+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { [weak self] response in
-//            guard self != nil else { return }
-//            if let response_dict = response.result.value as? [String: Any] {
-//                if (response_dict.keys.contains("success")) {
-//                    if (response_dict["success"] as! Int == 1) {
-//                        Mixpanel.mainInstance().identify(
-//                            distinctId: Mixpanel.mainInstance().distinctId)
-//                        Mixpanel.mainInstance().people.set(properties: ["$name": (self?.get_username())!])
-//                        self?.processResponse(response_dict: response_dict, callback: callback)
-//                    } else {
-//                        // got error
-//                        callback(response_dict["success"] as! Int)
-//                    }
-//                }
-//            }
-//        }
-//    }
-=======
+
     func login(callback: @escaping (_ result: Int)->Void) -> Void {
         let parameters = [
             "username": self.username,
@@ -163,7 +130,7 @@ class User {
             }
         }
     }
->>>>>>> 8f141a5b413e5e585feafdb6995af4b8945bf50d
+
     
     // MARK: - Signup
     func signup(callback: @escaping (_ result: Int)->Void) -> Void {
@@ -186,8 +153,8 @@ class User {
     }
     
     // MARK: - Logout
-<<<<<<< HEAD
-//    func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> Void {
+
+    func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> Void {
 //        if let token = self.get_token() {
 //            print("TOKEN: \(token)")
 //            let headers = [
@@ -197,7 +164,7 @@ class User {
 //                if var json = response.result.value as? [String: Bool] {
 //                    if (json["success"] == true) {
 //                        self?.loggedIn = false
-//                        self?.set_badge(badge: "")
+//                        self?.set_badge(badge: [false])
 //                        self?.set_username(username: "curbmaptest")
 //                        self?.set_password(password: "TestCurbm@p1")
 //                        self?.set_token(token: nil)
@@ -215,47 +182,6 @@ class User {
 //                })
 //            }
 //        }
-//    }
-    
-    // MARK: - Process response when a user is logged in
-//    func processResponse(response_dict: [String: Any], callback: (_ result: Int)->Void) {
-//        self.set_badge(badge: response_dict["badge"] as! String)
-//        self.set_score(score: (Int64)((response_dict["score"] as! NSString).intValue))
-//        self.set_token(token: response_dict["token"] as? String)
-//        self.set_exp_date(date: Calendar.current.date(byAdding: .day, value: 1, to: Date())!);
-//        self.set_email(email: response_dict["email"] as! String)
-//        self.loggedIn = true
-//        callback(1)
-//    }
-=======
-    func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> Void {
-        if let token = self.get_token() {
-            print("TOKEN: \(token)")
-            let headers = [
-                "Authorization": "Bearer \(token)"
-            ]
-            Alamofire.request(self.auth_host+"/logout", method: .post, parameters: ["X":"y"], headers: headers).responseJSON { [weak self] response in
-                if var json = response.result.value as? [String: Bool] {
-                    if (json["success"] == true) {
-                        self?.loggedIn = false
-                        self?.set_badge(badge: [false])
-                        self?.set_username(username: "curbmaptest")
-                        self?.set_password(password: "TestCurbm@p1")
-                        self?.set_token(token: nil)
-                        self?.set_remember(remember: false)
-                        try? self?.keychain.removeAll()
-                        self?.login(callback: callback) // log back in as test user
-                    }
-                }
-            }
-        } else {
-            // retry with backoff and max retries
-            if (retries + 1 < retriesMax) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(retries), execute: {
-                    self.logout(callback: callback, retries: retries + 1, retriesMax: retriesMax)
-                })
-            }
-        }
     }
     
     // MARK: - Process response when a user is logged in
@@ -268,7 +194,7 @@ class User {
         self.loggedIn = true
         callback(1)
     }
->>>>>>> 8f141a5b413e5e585feafdb6995af4b8945bf50d
+
     
     func isLoggedIn() -> Bool {
         return self.loggedIn;
