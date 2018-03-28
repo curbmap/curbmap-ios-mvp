@@ -17,7 +17,7 @@ let AUTH_HOST = "https://curbmap.com"
  Takes a function which expects back a result value passed from the server on attempted login
  Because calls are async we need to use a callback method.
  */
-internal func login(callback: @escaping (_ result: Int)->Void) -> Void {
+func login(callback: @escaping (_ result: Int)->Void) -> Void {
     let parameters = [
         "username": User.currentUser.getUsername(),
         "password": User.currentUser.getPassword()
@@ -50,7 +50,7 @@ internal func login(callback: @escaping (_ result: Int)->Void) -> Void {
 
 
 // MARK: - Signup
-internal func signup(callback: @escaping (_ result: Int)->Void) -> Void {
+func signup(callback: @escaping (_ result: Int)->Void) -> Void {
     let parameters = [
         "username": User.currentUser.getUsername(),
         "password": User.currentUser.getPassword(),
@@ -69,7 +69,7 @@ internal func signup(callback: @escaping (_ result: Int)->Void) -> Void {
 }
 
 // MARK: - Logout
-internal func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> Void {
+func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> Void {
     if let token = User.currentUser.getToken() {
         let headers = [
             "Authorization": "Bearer \(token)"
