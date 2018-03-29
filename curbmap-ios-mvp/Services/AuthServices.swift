@@ -69,6 +69,11 @@ func signup(callback: @escaping (_ result: Int)->Void) -> Void {
 }
 
 // MARK: - Logout
+/*
+ It might seem counterintuitive, but the user using the device is never actually logged out on the app.
+ This is important so that even on first use the user can upload photos and add lines and do whatever else.
+ They won't get points for these things but they will be able to do them because they will have a token
+ */
 func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> Void {
     if let token = User.currentUser.getToken() {
         let headers = [
@@ -83,7 +88,7 @@ func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> V
                     User.currentUser.setPassword("TestCurbm@p1")
                     User.currentUser.setToken(nil)
                     User.currentUser.setRemember(false)
-                    //try? User.currentUser.keychain.removeAll() // this will have to be a shared keychain in appdelegate or somewhere here
+                    User.currentUser.resetKeychain()
                     login(callback: callback) // log back in as test user
                 }
             }
