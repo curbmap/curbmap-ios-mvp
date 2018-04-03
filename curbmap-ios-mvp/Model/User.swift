@@ -4,24 +4,24 @@
 //
 //  Copyright © 2017 curbmap. All rights reserved.
 //
-
 import Foundation
+import KeychainAccess
 import MapKit
 
-let currentUser = User(username: "curbmap", password: "TestCurbm@p1");
-
-class User {
+class User : NSObject {
+    public static let currentUser = User(username: "curbmap", password: "TestCurbm@p1");
+    private var keychain = Keychain(accessGroup: "curbmap")
     private var username: String
     private var password: String
     private var email: String
     private var loggedIn: Bool
-    var remember: Bool
-    var token: String?
-    var expDate: Date
-    var score: Int64
-    var badge: [Bool]
-    var currentLocation: CLLocation!
-    init(username: String, password: String) {
+    private var remember: Bool
+    private var token: String?
+    private var expDate: Date
+    private var score: Int64
+    private var badge: [Bool]
+    private var currentLocation: CLLocation!
+    private init(username: String, password: String) {
         self.username = username
         self.password = password
         self.remember = false
@@ -89,6 +89,37 @@ class User {
         } else {
             updateToken()
             return nil
+        }
+    }
+    func resetKeychain() -> Void {
+        try? self.keychain.removeAll()
+    }
+    /*
+     If there was a user stored the User instance now has that value if returned true
+     otherwise the user is still curbmaptest
+     */
+    func getUserFromKeychain() -> Bool {
+        if let username = try? self.keychain.get("username") {
+            if let password = try? self.keychain.get("password") {
+                // not sure why it still needs unwrapping, but it does
+                self.username = username!
+                self.password = password!
+                return true
+            }
+        }
+        return false
+    }
+    /*
+     If maybe after successful login and user wishes information to be stored,
+     we can store those values in the keychain
+     */
+    func storeUserToKeychain() -> Bool {
+        do {
+            try self.keychain.set(self.username, key: "username")
+            try self.keychain.set(self.password, key: "password")
+            return true
+        } catch {
+            return false
         }
     }
     func setLoggedIn(_ status: Bool) -> Void {

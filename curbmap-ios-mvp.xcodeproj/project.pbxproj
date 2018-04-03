@@ -13,6 +13,7 @@
 		D50CC4EF20683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
 		D50CC4F020683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
 		D50CC4F120683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
+		D5AC21B6206C5D04002C97CB /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E75A53206AE9A500A58E3F /* AuthServices.swift */; };
 		D5E75A54206AE9A500A58E3F /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E75A53206AE9A500A58E3F /* AuthServices.swift */; };
 		D5E75A55206AE9A500A58E3F /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E75A53206AE9A500A58E3F /* AuthServices.swift */; };
 		D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53892066224C001F602C /* AppDelegate.swift */; };
@@ -577,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5AC21B6206C5D04002C97CB /* AuthServices.swift in Sources */,
 				D50CC4F120683E6F007A37E3 /* User.swift in Sources */,
 				D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */,
 			);
@@ -732,7 +734,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG58NB3258;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -752,7 +754,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG58NB3258;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
