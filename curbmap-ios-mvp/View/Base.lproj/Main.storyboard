@@ -135,6 +135,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bm1-hA-3sa"/>
                     </view>
+                    <connections>
+                        <outlet property="caturePreviewView" destination="oWW-26-O8e" id="AIO-Ma-I3S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dum-cf-Z78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,8 @@
 import UIKit
 
 class CameraViewController: UIViewController {
-
+    
+    @IBOutlet weak var caturePreviewView: UIView!
     let cameraController = CameraController()
     
     override func viewDidLoad() {
@@ -18,7 +19,7 @@ class CameraViewController: UIViewController {
                 if let error = error {
                     print(error)
                 }
-                try? self.cameraController.displayPreview(on: self.capturePreviewView)
+                try? self.cameraController.displayPreview(on: self.caturePreviewView)
             }
         }
     }
