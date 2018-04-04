@@ -7,55 +7,22 @@
 //
 
 import UIKit
-import AVFoundation
-import Vision
 
 class CameraViewController: UIViewController {
 
-    var captureSession: AVCaptureSession?
-    var frontCamera: AVCaptureDevice?
+    let cameraController = CameraController()
     
-    func prepare(callBack: @escaping(Error?)-> Void) {
-        
-        func createCaptureSession() {
-            // 1. create new capture session
-            self.captureSession = AVCaptureSession()
-        }
-        func configureCaptureDevices() throws {
-            
-        }
-        func configureDeviceInputs() throws {}
-        func configurePhotoOutput() throws {}
-        
-        DispatchQueue(label: "prepare").async {
-            do {
-                createCaptureSession()
-                try configureCaptureDevices()
-                try configureDeviceInputs()
-                try configurePhotoOutput()
-            } catch {
-                DispatchQueue.main.async {
-                    callBack(error)
+    override func viewDidLoad() {
+        func configureCameraController() {
+            cameraController.prepare { (error) in
+                if let error = error {
+                    print(error)
                 }
-                return
-            }
-            DispatchQueue.main.async {
-                callBack(nil)
+                try? self.cameraController.displayPreview(on: self.capturePreviewView)
             }
         }
     }
-
-    
-    
-
     
 }
 
-enum cameraControllerError: Swift.Error {
-    case captureSessionAlreadyRunning
-    case captureSessionIsMissing
-    case inputsAreInvalid
-    case invalidOperation
-    case noCameraAvailable
-    case unknown
-}
+
