@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qXl-4i-ZHM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -118,20 +118,21 @@
             <objects>
                 <viewController id="qXl-4i-ZHM" customClass="CameraViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jEU-ZH-Z2R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWW-26-O8e" userLabel="cameraView">
-                                <rect key="frame" x="16" y="42" width="343" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="gwd-pC-jNA"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oWW-26-O8e" firstAttribute="centerX" secondItem="jEU-ZH-Z2R" secondAttribute="centerX" id="1fX-EZ-C37"/>
-                            <constraint firstItem="oWW-26-O8e" firstAttribute="top" secondItem="bm1-hA-3sa" secondAttribute="top" constant="22" id="1od-Z0-hhm"/>
-                            <constraint firstItem="bm1-hA-3sa" firstAttribute="bottom" secondItem="oWW-26-O8e" secondAttribute="bottom" constant="165" id="3eo-ml-6x3"/>
-                            <constraint firstItem="bm1-hA-3sa" firstAttribute="trailing" secondItem="oWW-26-O8e" secondAttribute="trailing" constant="16" id="dEG-P4-kUN"/>
-                            <constraint firstItem="oWW-26-O8e" firstAttribute="leading" secondItem="bm1-hA-3sa" secondAttribute="leading" constant="16" id="haV-XP-w6A"/>
+                            <constraint firstItem="oWW-26-O8e" firstAttribute="centerX" secondItem="jEU-ZH-Z2R" secondAttribute="centerX" id="6pr-vb-XEV"/>
+                            <constraint firstItem="oWW-26-O8e" firstAttribute="top" secondItem="bm1-hA-3sa" secondAttribute="top" constant="-20" id="Oki-ME-yxH"/>
+                            <constraint firstItem="bm1-hA-3sa" firstAttribute="bottom" secondItem="oWW-26-O8e" secondAttribute="bottom" id="r3g-3I-hEB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bm1-hA-3sa"/>
                     </view>
@@ -141,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dum-cf-Z78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.80000000000001" y="839.73013493253382"/>
+            <point key="canvasLocation" x="456.52173913043481" y="839.67391304347836"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="nQF-46-I5O">
@@ -149,7 +150,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qTf-gk-lSN" customClass="NavigationViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nhz-Ip-kzc">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
