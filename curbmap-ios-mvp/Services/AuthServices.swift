@@ -22,11 +22,6 @@ func login(callback: @escaping (_ result: Int)->Void) -> Void {
         "username": User.currentUser.getUsername(),
         "password": User.currentUser.getPassword()
     ]
-    if (User.currentUser.getUsername() == "" || User.currentUser.getPassword() == "") {
-        callback(0)
-        return
-    }
-    
     let headers = [
         "Content-Type": "application/x-www-form-urlencoded"
     ]

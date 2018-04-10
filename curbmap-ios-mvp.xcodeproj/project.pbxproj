@@ -13,6 +13,9 @@
 		D50CC4EF20683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
 		D50CC4F020683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
 		D50CC4F120683E6F007A37E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CC4EE20683E6F007A37E3 /* User.swift */; };
+		D57B60EE207D7A3A0007516C /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B60ED207D7A3A0007516C /* LocationServices.swift */; };
+		D57B60EF207D7A3A0007516C /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B60ED207D7A3A0007516C /* LocationServices.swift */; };
+		D57B60F0207D7A3A0007516C /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B60ED207D7A3A0007516C /* LocationServices.swift */; };
 		D5AC21B6206C5D04002C97CB /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E75A53206AE9A500A58E3F /* AuthServices.swift */; };
 		D5E75A54206AE9A500A58E3F /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E75A53206AE9A500A58E3F /* AuthServices.swift */; };
 		D5E75A55206AE9A500A58E3F /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E75A53206AE9A500A58E3F /* AuthServices.swift */; };
@@ -59,6 +62,7 @@
 		974D7A38275B954592532363 /* Pods_curbmap_ios_mvpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_curbmap_ios_mvpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7870AFE72127AC6298E16D1 /* Pods-curbmap-ios-mvpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpUITests/Pods-curbmap-ios-mvpUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D50CC4EE20683E6F007A37E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D57B60ED207D7A3A0007516C /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		D5E75A53206AE9A500A58E3F /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		D5EF53862066224C001F602C /* curbmap-ios-mvp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "curbmap-ios-mvp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF53892066224C001F602C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 			children = (
 				D5E75A53206AE9A500A58E3F /* AuthServices.swift */,
 				F95C8DE5207D50D6003256C2 /* APIManager.swift */,
+				D57B60ED207D7A3A0007516C /* LocationServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */,
 				D50CC4EF20683E6F007A37E3 /* User.swift in Sources */,
 				D5E75A54206AE9A500A58E3F /* AuthServices.swift in Sources */,
+				D57B60EE207D7A3A0007516C /* LocationServices.swift in Sources */,
 				F9A839C4207427F200B64B6C /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +584,7 @@
 			files = (
 				D5E75A55206AE9A500A58E3F /* AuthServices.swift in Sources */,
 				D50CC4F020683E6F007A37E3 /* User.swift in Sources */,
+				D57B60EF207D7A3A0007516C /* LocationServices.swift in Sources */,
 				D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +595,7 @@
 			files = (
 				D5AC21B6206C5D04002C97CB /* AuthServices.swift in Sources */,
 				D50CC4F120683E6F007A37E3 /* User.swift in Sources */,
+				D57B60F0207D7A3A0007516C /* LocationServices.swift in Sources */,
 				D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,7 +750,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG58NB3258;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -762,7 +770,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG58NB3258;
+				DEVELOPMENT_TEAM = CNKFCAS44G;
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
