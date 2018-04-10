@@ -16,6 +16,9 @@ class CameraViewController: UIViewController {
     var stillImage: UIImage?
     
     override func viewDidLoad() {
+        // hide navigation bar
+        self.navigationController?.navigationBar.isHidden = true
+        
         func configureCameraController() {
             cameraController.prepare { (error) in
                 if let error = error {
@@ -40,6 +43,7 @@ class CameraViewController: UIViewController {
         }
     }
     
+    // MARK: - Segue -
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let displayViewController = segue.destination as! DisplayViewController
         if let stillImage = stillImage {
@@ -48,6 +52,7 @@ class CameraViewController: UIViewController {
             print("error no stillimage")
         }
     }
+    
     
     
 }

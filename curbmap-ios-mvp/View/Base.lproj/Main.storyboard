@@ -176,10 +176,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eB-ha-CZD">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eB-ha-CZD" userLabel="Camera Button">
                                 <rect key="frame" x="187" y="634" width="41" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="photomarker"/>
+                                <connections>
+                                    <action selector="cameraButtonDidPressed:" destination="IVT-a3-UUi" eventType="touchUpInside" id="ce1-d3-hw6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Read data from sign and answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHh-Q1-zwD">
                                 <rect key="frame" x="0.0" y="501" width="414" height="112"/>
@@ -194,6 +197,7 @@
                     </view>
                     <connections>
                         <outlet property="capturedImage" destination="yBJ-43-vXw" id="e42-EI-g5B"/>
+                        <outlet property="displayMessage" destination="IHh-Q1-zwD" id="bDJ-q0-d2f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRX-FO-ZOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
