@@ -24,6 +24,11 @@
 		D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF539E2066224D001F602C /* curbmap_ios_mvpTests.swift */; };
 		D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */; };
 		D5EF53BA206622BD001F602C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF53B9206622BD001F602C /* MapKit.framework */; };
+		F95C8DE4207D3907003256C2 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C8DE3207D3907003256C2 /* DisplayViewController.swift */; };
+		F95C8DE6207D50D6003256C2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C8DE5207D50D6003256C2 /* APIManager.swift */; };
+		F965C137206AD8EE00814D46 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965C136206AD8EE00814D46 /* NavigationViewController.swift */; };
+		F9A839C4207427F200B64B6C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A839C3207427F200B64B6C /* CameraViewController.swift */; };
+		F9A839C620744BE100B64B6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A839C520744BE100B64B6C /* CameraController.swift */; };
 		F9AEE6E920672EB90030B2E8 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = F9AEE6E820672EB90030B2E8 /* Poppins */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +74,11 @@
 		D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curbmap_ios_mvpUITests.swift; sourceTree = "<group>"; };
 		D5EF53AB2066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5EF53B9206622BD001F602C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F95C8DE3207D3907003256C2 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		F95C8DE5207D50D6003256C2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F965C136206AD8EE00814D46 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		F9A839C3207427F200B64B6C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F9A839C520744BE100B64B6C /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		F9AEE6E820672EB90030B2E8 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 		FE1A8CAFD27D8D7ED785448C /* Pods-curbmap-ios-mvpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-curbmap-ios-mvpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-curbmap-ios-mvpTests/Pods-curbmap-ios-mvpTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,13 +125,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D50CC4F2206840D1007A37E3 /* User */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
 		D5E75A51206AE96600A58E3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E75A53206AE9A500A58E3F /* AuthServices.swift */,
+				F95C8DE5207D50D6003256C2 /* APIManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -206,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				F9AEE6E820672EB90030B2E8 /* Poppins */,
-				D50CC4F2206840D1007A37E3 /* User */,
 				D5EF53922066224D001F602C /* LaunchScreen.storyboard */,
 				D5EF53892066224C001F602C /* AppDelegate.swift */,
 				D5EF53902066224D001F602C /* Assets.xcassets */,
@@ -218,6 +221,10 @@
 			isa = PBXGroup;
 			children = (
 				D5EF538B2066224D001F602C /* LoginViewController.swift */,
+				F965C136206AD8EE00814D46 /* NavigationViewController.swift */,
+				F9A839C3207427F200B64B6C /* CameraViewController.swift */,
+				F9A839C520744BE100B64B6C /* CameraController.swift */,
+				F95C8DE3207D3907003256C2 /* DisplayViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -553,10 +560,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F965C137206AD8EE00814D46 /* NavigationViewController.swift in Sources */,
 				D5EF538C2066224D001F602C /* LoginViewController.swift in Sources */,
+				F9A839C620744BE100B64B6C /* CameraController.swift in Sources */,
+				F95C8DE6207D50D6003256C2 /* APIManager.swift in Sources */,
+				F95C8DE4207D3907003256C2 /* DisplayViewController.swift in Sources */,
 				D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */,
 				D50CC4EF20683E6F007A37E3 /* User.swift in Sources */,
 				D5E75A54206AE9A500A58E3F /* AuthServices.swift in Sources */,
+				F9A839C4207427F200B64B6C /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +742,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNKFCAS44G;
+				DEVELOPMENT_TEAM = GG58NB3258;
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -750,7 +762,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNKFCAS44G;
+				DEVELOPMENT_TEAM = GG58NB3258;
 				INFOPLIST_FILE = "curbmap-ios-mvp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WHl-qn-Jkg">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gy-nM-upm">
-                                <rect key="frame" x="0.0" y="20" width="375" height="630"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="586"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svt-A9-QFy" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="757"/>
@@ -100,6 +100,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="P0n-aM-3NQ"/>
                     <size key="freeformSize" width="375" height="650"/>
                     <connections>
                         <outlet property="contentView" destination="Svt-A9-QFy" id="0Je-ab-ctw"/>
@@ -110,10 +111,139 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="117.84107946026987"/>
+            <point key="canvasLocation" x="456.80000000000001" y="117.84107946026987"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="Ev5-Jr-3oV">
+            <objects>
+                <viewController id="qXl-4i-ZHM" customClass="CameraViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jEU-ZH-Z2R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWW-26-O8e" userLabel="cameraView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-2Q-9Mg">
+                                        <rect key="frame" x="175.66666666666666" y="576" width="64" height="64"/>
+                                        <state key="normal" image="photo"/>
+                                        <connections>
+                                            <action selector="cameraButtonDidPressed:" destination="qXl-4i-ZHM" eventType="touchUpInside" id="3wl-vW-33Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="gwd-pC-jNA"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Rj-2Q-9Mg" secondAttribute="bottom" constant="52" id="pZ8-qV-sad"/>
+                                    <constraint firstItem="1Rj-2Q-9Mg" firstAttribute="centerX" secondItem="oWW-26-O8e" secondAttribute="centerX" id="sKZ-Q2-qS1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oWW-26-O8e" firstAttribute="centerX" secondItem="jEU-ZH-Z2R" secondAttribute="centerX" id="6pr-vb-XEV"/>
+                            <constraint firstItem="oWW-26-O8e" firstAttribute="top" secondItem="bm1-hA-3sa" secondAttribute="top" constant="-20" id="Oki-ME-yxH"/>
+                            <constraint firstItem="bm1-hA-3sa" firstAttribute="bottom" secondItem="oWW-26-O8e" secondAttribute="bottom" id="r3g-3I-hEB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bm1-hA-3sa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6zG-KC-LUo"/>
+                    <connections>
+                        <outlet property="caturePreviewView" destination="oWW-26-O8e" id="AIO-Ma-I3S"/>
+                        <segue destination="IVT-a3-UUi" kind="presentation" identifier="cameraSegue" id="Fb6-XQ-N9d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dum-cf-Z78" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="848"/>
+        </scene>
+        <!--Display View Controller-->
+        <scene sceneID="Mum-E3-9Le">
+            <objects>
+                <viewController id="IVT-a3-UUi" customClass="DisplayViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JiM-TH-WLB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yBJ-43-vXw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="452"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="can you park here?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP5-cv-WfP">
+                                <rect key="frame" x="0.0" y="450" width="414" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eB-ha-CZD" userLabel="Camera Button">
+                                <rect key="frame" x="187" y="634" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="photomarker"/>
+                                <connections>
+                                    <action selector="cameraButtonDidPressed:" destination="IVT-a3-UUi" eventType="touchUpInside" id="ce1-d3-hw6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Read data from sign and answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHh-Q1-zwD">
+                                <rect key="frame" x="0.0" y="501" width="414" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DaY-Qe-Hy0"/>
+                    </view>
+                    <connections>
+                        <outlet property="capturedImage" destination="yBJ-43-vXw" id="e42-EI-g5B"/>
+                        <outlet property="displayMessage" destination="IHh-Q1-zwD" id="bDJ-q0-d2f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRX-FO-ZOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="848"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="nQF-46-I5O">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qTf-gk-lSN" customClass="NavigationViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nhz-Ip-kzc">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iRb-1R-99q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoF-Kg-H1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-439" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bxg-WG-Ul0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WHl-qn-Jkg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jKO-f2-cNY">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qXl-4i-ZHM" kind="relationship" relationship="rootViewController" id="1W1-DQ-Zm4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Kt-wx-uZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-439" y="848"/>
         </scene>
     </scenes>
     <resources>
         <image name="curbmaplogo" width="330" height="310"/>
+        <image name="photo" width="64" height="64"/>
+        <image name="photomarker" width="41" height="41"/>
     </resources>
 </document>
