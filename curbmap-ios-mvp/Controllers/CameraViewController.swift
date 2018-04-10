@@ -25,6 +25,11 @@ class CameraViewController: UIViewController {
         configureCameraController()
     }
     
+    @IBAction func cameraButtonDidPressed(_ sender: UIButton) {
+        
+    }
+    
+    
 }
 
 

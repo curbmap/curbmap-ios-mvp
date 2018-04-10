@@ -17,6 +17,7 @@ class CameraController {
     var rearCameraInput: AVCaptureDeviceInput?
     var photoOutput: AVCapturePhotoOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
+    var photoCaptureCompletionBlock: ((UIImage?, Error?) -> Void)?
     
     func prepare(callBack: @escaping(Error?)-> Void) {
         
@@ -87,6 +88,17 @@ class CameraController {
         view.layer.insertSublayer(self.previewLayer!, at: 0)
         self.previewLayer?.frame = view.frame
     }
+    func captureImage(completion: @escaping (UIImage?, Error?)-> Void){
+        guard let captureSession = captureSession, captureSession.isRunning else { completion(nil, cameraControllerError.captureSessionIsMissing)
+            return
+        }
+        let settings = AVCapturePhotoSettings()
+        self.photoOutput?.capturePhoto(with: settings, delegate: self)
+        self.photoCaptureCompletionBlock = completion
+    }
+}
+
+extension CameraController: AVCapturePhotoCaptureDelegate {
     
 }
 

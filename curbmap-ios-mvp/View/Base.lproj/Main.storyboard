@@ -128,6 +128,7 @@
                                         <rect key="frame" x="175.66666666666666" y="576" width="64" height="64"/>
                                         <state key="normal" image="photo"/>
                                         <connections>
+                                            <action selector="cameraButtonDidPressed:" destination="qXl-4i-ZHM" eventType="touchUpInside" id="3wl-vW-33Z"/>
                                             <segue destination="IVT-a3-UUi" kind="presentation" id="WJb-f5-Ro4"/>
                                         </connections>
                                     </button>
