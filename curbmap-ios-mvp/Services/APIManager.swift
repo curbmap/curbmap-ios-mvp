@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import UIKit
+import Alamofire
+
+class APIManager {
+    
+    // Singleton for calling on all APIs
+    static let shared = APIManager()
+    
+    func upLoadImage(image: UIImage, callBack: @escaping () -> Void) {
+        let urlString = "https://curbmap.com:50003/imageUpload"
+        let headers = ["Authorization": "Bearer \(User.currentUser.getToken()!)"]
+        
+        
+        
+    }
+    
+}

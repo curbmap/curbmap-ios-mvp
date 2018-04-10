@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // MARK: - TESTING -
         // login
+        let authServices = AuthServices()
+        authServices.login { (result) in
+            
+            print(result)
+            // TODO: What does a result of -2 mean?
+        }
         
         
         // MARK: - END OF TESTING -

@@ -87,7 +87,8 @@ class User : NSObject {
         if (Date() < self.expDate) {
             return self.token
         } else {
-            updateToken()
+            let authServices = AuthServices()
+            authServices.updateToken()
             return nil
         }
     }
