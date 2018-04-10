@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Vision
 
-class CameraController {
+class CameraController: NSObject {
     
     var captureSession: AVCaptureSession?
     var rearCamera: AVCaptureDevice?
@@ -99,7 +99,16 @@ class CameraController {
 }
 
 extension CameraController: AVCapturePhotoCaptureDelegate {
-    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let error = error {
+            self.photoCaptureCompletionBlock?(nil, error)
+        } else if let imageData = photo.fileDataRepresentation() {
+            let image = UIImage(data: imageData)
+            self.photoCaptureCompletionBlock?(image, nil)
+        } else {
+            self.photoCaptureCompletionBlock?(nil, cameraControllerError.unknown)
+        }
+    }
 }
 
 enum cameraControllerError: Swift.Error {

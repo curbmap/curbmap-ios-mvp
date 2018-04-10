@@ -24,6 +24,7 @@
 		D5EF539F2066224D001F602C /* curbmap_ios_mvpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF539E2066224D001F602C /* curbmap_ios_mvpTests.swift */; };
 		D5EF53AA2066224D001F602C /* curbmap_ios_mvpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */; };
 		D5EF53BA206622BD001F602C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF53B9206622BD001F602C /* MapKit.framework */; };
+		F95C8DE4207D3907003256C2 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C8DE3207D3907003256C2 /* DisplayViewController.swift */; };
 		F965C137206AD8EE00814D46 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965C136206AD8EE00814D46 /* NavigationViewController.swift */; };
 		F9A839C4207427F200B64B6C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A839C3207427F200B64B6C /* CameraViewController.swift */; };
 		F9A839C620744BE100B64B6C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A839C520744BE100B64B6C /* CameraController.swift */; };
@@ -72,6 +73,7 @@
 		D5EF53A92066224D001F602C /* curbmap_ios_mvpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curbmap_ios_mvpUITests.swift; sourceTree = "<group>"; };
 		D5EF53AB2066224D001F602C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5EF53B9206622BD001F602C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F95C8DE3207D3907003256C2 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		F965C136206AD8EE00814D46 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		F9A839C3207427F200B64B6C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		F9A839C520744BE100B64B6C /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				F965C136206AD8EE00814D46 /* NavigationViewController.swift */,
 				F9A839C3207427F200B64B6C /* CameraViewController.swift */,
 				F9A839C520744BE100B64B6C /* CameraController.swift */,
+				F95C8DE3207D3907003256C2 /* DisplayViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				F965C137206AD8EE00814D46 /* NavigationViewController.swift in Sources */,
 				D5EF538C2066224D001F602C /* LoginViewController.swift in Sources */,
 				F9A839C620744BE100B64B6C /* CameraController.swift in Sources */,
+				F95C8DE4207D3907003256C2 /* DisplayViewController.swift in Sources */,
 				D5EF538A2066224C001F602C /* AppDelegate.swift in Sources */,
 				D50CC4EF20683E6F007A37E3 /* User.swift in Sources */,
 				D5E75A54206AE9A500A58E3F /* AuthServices.swift in Sources */,

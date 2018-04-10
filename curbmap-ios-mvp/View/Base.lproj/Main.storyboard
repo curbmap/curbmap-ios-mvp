@@ -129,7 +129,6 @@
                                         <state key="normal" image="photo"/>
                                         <connections>
                                             <action selector="cameraButtonDidPressed:" destination="qXl-4i-ZHM" eventType="touchUpInside" id="3wl-vW-33Z"/>
-                                            <segue destination="IVT-a3-UUi" kind="presentation" id="WJb-f5-Ro4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -151,16 +150,17 @@
                     <navigationItem key="navigationItem" id="6zG-KC-LUo"/>
                     <connections>
                         <outlet property="caturePreviewView" destination="oWW-26-O8e" id="AIO-Ma-I3S"/>
+                        <segue destination="IVT-a3-UUi" kind="presentation" identifier="cameraSegue" id="Fb6-XQ-N9d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dum-cf-Z78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1363.768115942029" y="839.67391304347836"/>
+            <point key="canvasLocation" x="467" y="848"/>
         </scene>
-        <!--View Controller-->
+        <!--Display View Controller-->
         <scene sceneID="Mum-E3-9Le">
             <objects>
-                <viewController id="IVT-a3-UUi" sceneMemberID="viewController">
+                <viewController id="IVT-a3-UUi" customClass="DisplayViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JiM-TH-WLB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,10 +192,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DaY-Qe-Hy0"/>
                     </view>
+                    <connections>
+                        <outlet property="capturedImage" destination="yBJ-43-vXw" id="e42-EI-g5B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRX-FO-ZOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2107.2463768115945" y="837.22826086956525"/>
+            <point key="canvasLocation" x="1212" y="848"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="nQF-46-I5O">
@@ -231,7 +234,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kt-wx-uZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.52173913043481" y="839.67391304347836"/>
+            <point key="canvasLocation" x="-439" y="848"/>
         </scene>
     </scenes>
     <resources>
