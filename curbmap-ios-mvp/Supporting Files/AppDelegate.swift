@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // MARK: - TESTING -
         // instantiate current user
-        let user = User.currentUser
+//        let user = User.currentUser
         
         let authServices = AuthServices()
         authServices.login { (result) in

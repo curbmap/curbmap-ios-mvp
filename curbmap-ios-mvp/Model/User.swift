@@ -10,7 +10,7 @@ import MapKit
 
 class User : NSObject {
     
-    static let currentUser = User(username: "curbmap", password: "TestCurbm@p1")
+    static let currentUser = User(username: "curbmaptest", password: "TestCurbm@p1")
     
     private var keychain = Keychain(accessGroup: "curbmap")
     private var username: String
