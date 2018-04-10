@@ -16,6 +16,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+xcuserdata/*
 
 ## Other
 *.moved-aside
@@ -39,6 +40,9 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/
+
+# Ignore minor storyboard changes
+.DS_Store
 
 # CocoaPods
 #
@@ -66,3 +70,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+
+# ADD MORE HERE
+
