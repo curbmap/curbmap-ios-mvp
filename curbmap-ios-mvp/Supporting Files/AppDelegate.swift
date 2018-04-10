@@ -17,12 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // MARK: - TESTING -
-        // login
+        // instantiate current user
+        let user = User.currentUser
+        
         let authServices = AuthServices()
         authServices.login { (result) in
-            
             print(result)
             // TODO: What does a result of -2 mean?
+            
+            // Broadcast successful login
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "login"), object: nil)
         }
         
         
