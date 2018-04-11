@@ -9,7 +9,9 @@ import KeychainAccess
 import MapKit
 
 class User : NSObject {
-    public static let currentUser = User(username: "curbmap", password: "TestCurbm@p1");
+    
+    static let currentUser = User(username: "curbmaptest", password: "TestCurbm@p1")
+    
     private var keychain = Keychain(accessGroup: "curbmap")
     private var username: String
     private var password: String
@@ -21,6 +23,7 @@ class User : NSObject {
     private var score: Int64
     private var badge: [Bool]
     private var currentLocation: CLLocation!
+    
     private init(username: String, password: String) {
         self.username = username
         self.password = password
@@ -87,7 +90,8 @@ class User : NSObject {
         if (Date() < self.expDate) {
             return self.token
         } else {
-            updateToken()
+            let authServices = AuthServices()
+            authServices.updateToken()
             return nil
         }
     }
