@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class APIManager {
     
@@ -27,7 +28,15 @@ class APIManager {
             case .success(let upload, _, _):
                 upload.responseJSON(completionHandler: { (response) in
                     if let statusCode = response.response?.statusCode {
-                        callBack("success status code \(statusCode)", nil)
+                        switch statusCode {
+                        case 200..<300:
+                            callBack("success status code \(statusCode)", nil)
+                        case 400..<499:
+                            callBack("request error status code \(statusCode)", nil)
+                        default:
+                            callBack("server error status code \(statusCode)", nil)
+                        }
+                        
                     } else {
                         callBack("unable to unwrap status code", nil)
                     }
