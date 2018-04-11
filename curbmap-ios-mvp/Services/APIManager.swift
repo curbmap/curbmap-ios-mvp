@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import AlamofireImage
+import OpenLocationCode
 
 class APIManager {
     
@@ -17,32 +18,44 @@ class APIManager {
     static let shared = APIManager()
     
     func upLoadImageText(image: UIImage, callBack: @escaping (String?, Error?) -> Void) {
+//        let imageOlc =
+        let imageData = self.processImageData(image: image)
+        let token = User.currentUser.getToken()!
         let urlString = "https://curbmap.com:50003/imageUploadText"
-        let headers = ["Authorization": "Bearer \(User.currentUser.getToken()!)"]
-        Alamofire.upload(multipartFormData: { (formData) in
-            let data = self.processImageData(image: image)
-            formData.append(data, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
-        }, usingThreshold: UInt64.init(), to: urlString, method: .post, headers: headers, encodingCompletion: { (encodingResult) in
+//        let headers = ["Authorization": "Bearer \(User.currentUser.getToken()!)"]
+        
+        let headers = [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": "Bearer \(token)"
+        ]
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .full
+        dateFormatter.dateStyle = .full
+        dateFormatter.timeZone = Calendar.current.timeZone
+        Alamofire.upload(multipartFormData: { MultipartFormData in
+            MultipartFormData.append("ios".data(using: String.Encoding.utf8)!, withName: "device")
+            MultipartFormData.append(token.data(using: .utf8)!, withName: "token")
+            MultipartFormData.append("\(dateFormatter.string(from: Date()))".data(using: String.Encoding.utf8)!, withName: "date")
+            MultipartFormData.append((TimeZone.current.abbreviation() ?? "").data(using: String.Encoding.utf8)!, withName: "timezone")
+            MultipartFormData.append("imageOLC+".data(using: String.Encoding.utf8)!, withName: "olc")
+            MultipartFormData.append("0.0".data(using: String.Encoding.utf8)!, withName: "bearing")
+            MultipartFormData.append(imageData, withName: "image", fileName: "file.jpg", mimeType: "image/jpeg")
+        }, usingThreshold:UInt64.init(), to: urlString, method: .post, headers: headers as! HTTPHeaders, encodingCompletion: { encodingResult in
             switch encodingResult {
-                
             case .success(let upload, _, _):
-                upload.responseJSON(completionHandler: { (response) in
-                    if let statusCode = response.response?.statusCode {
-                        switch statusCode {
-                        case 200..<300:
-                            callBack("success status code \(statusCode)", nil)
-                        case 400..<499:
-                            callBack("request error status code \(statusCode)", nil)
-                        default:
-                            callBack("server error status code \(statusCode)", nil)
+                upload.responseJSON { response in
+                    if let result = response.result.value {
+                        if let success = result as? NSDictionary {
+                            if let statusCode = response.response?.statusCode {
+                                print("success, status code: \(statusCode)")
+                                callBack("success", nil)
+                            }
                         }
-                        
-                    } else {
-                        callBack("unable to unwrap status code", nil)
                     }
-                })
+                }
             case .failure(let encodingError):
-                callBack(nil, encodingError)
+                print("failed to send \(encodingError.localizedDescription)")
+                callBack("error", encodingError)
             }
         })
     }
