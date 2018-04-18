@@ -33,12 +33,15 @@ class APIManager {
         dateFormatter.dateStyle = .full
         dateFormatter.timeZone = Calendar.current.timeZone
         Alamofire.upload(multipartFormData: { MultipartFormData in
-            MultipartFormData.append("ios".data(using: String.Encoding.utf8)!, withName: "device")
-            MultipartFormData.append(token.data(using: .utf8)!, withName: "token")
-            MultipartFormData.append("\(dateFormatter.string(from: Date()))".data(using: String.Encoding.utf8)!, withName: "date")
-            MultipartFormData.append((TimeZone.current.abbreviation() ?? "").data(using: String.Encoding.utf8)!, withName: "timezone")
-            MultipartFormData.append("imageOLC+".data(using: String.Encoding.utf8)!, withName: "olc")
-            MultipartFormData.append("0.0".data(using: String.Encoding.utf8)!, withName: "bearing")
+            // TODO: Eli to include messages in API response on the part of multipart data that failed
+            // If Image doesn't pass, error code = 500
+            // all required - image is not useful without the attached data
+            MultipartFormData.append("ios".data(using: String.Encoding.utf8)!, withName: "device") // pass string of device type
+            MultipartFormData.append(token.data(using: .utf8)!, withName: "token") // pass string of token
+            MultipartFormData.append("\(dateFormatter.string(from: Date()))".data(using: String.Encoding.utf8)!, withName: "date") // date of local user at the time the API is called
+            MultipartFormData.append((TimeZone.current.abbreviation() ?? "").data(using: String.Encoding.utf8)!, withName: "timezone") // time zone of local user
+            MultipartFormData.append("imageOLC+".data(using: String.Encoding.utf8)!, withName: "olc") // location -> string of longitude/latitude (not from picture)
+            MultipartFormData.append("0.0".data(using: String.Encoding.utf8)!, withName: "bearing") // heading, degrees from north, like compass - from CLLocation/device (not from picture)
             MultipartFormData.append(imageData, withName: "image", fileName: "file.jpg", mimeType: "image/jpeg")
         }, usingThreshold:UInt64.init(), to: urlString, method: .post, headers: headers as! HTTPHeaders, encodingCompletion: { encodingResult in
             switch encodingResult {
