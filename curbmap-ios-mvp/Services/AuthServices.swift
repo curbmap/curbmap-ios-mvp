@@ -2,8 +2,7 @@
 //  AuthServices.swift
 //  curbmap-ios-mvp
 //
-//  Created by Eli Selkin on 3/27/18.
-//  Copyright © 2018 Eli Selkin. All rights reserved.
+//  Copyright © 2018 curbmap. All rights reserved.
 //
 
 import Foundation
