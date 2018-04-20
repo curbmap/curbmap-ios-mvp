@@ -22,7 +22,7 @@ class curbmap_ios_mvpTests: XCTestCase {
     
     func testUserLogin() {
         let logine = expectation(description: "login")
-        login(callback: {(result) in
+        AuthServices.authServicesBroker.login(callback: {(result) in
             XCTAssert(result == 1) // logging in as test user
             logine.fulfill()
         })
@@ -31,7 +31,7 @@ class curbmap_ios_mvpTests: XCTestCase {
     
     func testUserLogout() {
         let logoute = expectation(description: "logout")
-        logout(callback: {(result) in
+        AuthServices.authServicesBroker.logout(callback: {(result) in
             XCTAssert(result == 1) // logging in as test user
             logoute.fulfill()
         }, retries: 0, retriesMax: 3)

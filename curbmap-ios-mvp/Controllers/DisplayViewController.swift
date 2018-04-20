@@ -26,7 +26,15 @@ class DisplayViewController: UIViewController {
         displayMessage.text = defaultMessage
         
         // calls API
-        
+        if let image = self.image {
+            APIManager.shared.upLoadImageText(image: image) { (successMessage, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print(successMessage!)
+                }
+            }
+        }
     }
     
     // MARK: - User Action
@@ -35,7 +43,6 @@ class DisplayViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - API Calls
     
     
 
