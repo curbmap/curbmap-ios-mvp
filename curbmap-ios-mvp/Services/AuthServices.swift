@@ -10,7 +10,8 @@ import Foundation
 import Alamofire
 import KeychainAccess
 import Mixpanel
-let AUTH_HOST = "https://curbmap.com"
+//let AUTH_HOST = "https://curbmap.com"
+let AUTH_HOST = "http://127.0.0.1:8080"
 
 // MARK: - Login
 /*
@@ -25,14 +26,11 @@ func login(callback: @escaping (_ result: Int)->Void) -> Void {
     let headers = [
         "Content-Type": "application/x-www-form-urlencoded"
     ]
-    
     Alamofire.request(AUTH_HOST+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { response in
         if let responseDict = response.result.value as? [String: Any] {
             if (responseDict.keys.contains("success")) {
                 if (responseDict["success"] as! Int == 1) {
-                    Mixpanel.mainInstance().identify(
-                        distinctId: Mixpanel.mainInstance().distinctId)
-                    Mixpanel.mainInstance().people.set(properties: ["$name": (User.currentUser.getUsername())])
+                    print("here in login")
                     processResponse(responseDict, callback: callback)
                 } else {
                     // got error
@@ -74,7 +72,7 @@ func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> V
         let headers = [
             "Authorization": "Bearer \(token)"
         ]
-        Alamofire.request(AUTH_HOST+"/logout", method: .post, parameters: ["X":"y"], headers: headers).responseJSON { response in
+        Alamofire.request(AUTH_HOST+"/logout", method: .post, headers: headers).responseJSON { response in
             if var json = response.result.value as? [String: Bool] {
                 if (json["success"] == true) {
                     User.currentUser.setLoggedIn(false)
@@ -108,6 +106,7 @@ private func updatedToken(_ value: Int) -> Void {
 
 // MARK: - Process response when a user is logged in
 private func processResponse(_ responseDict: [String: Any], callback: (_ result: Int)->Void) {
+    print("got here in process response")
     User.currentUser.setBadge(responseDict["badge"] as! [Bool])
     User.currentUser.setScore((Int64)((responseDict["score"] as! NSString).intValue))
     User.currentUser.setToken(responseDict["token"] as? String)
