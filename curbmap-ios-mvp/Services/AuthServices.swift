@@ -2,18 +2,18 @@
 //  AuthServices.swift
 //  curbmap-ios-mvp
 //
-//  Created by Eli Selkin on 3/27/18.
-//  Copyright © 2018 Eli Selkin. All rights reserved.
+//  Copyright © 2018 curbmap. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 import KeychainAccess
 import Mixpanel
-let AUTH_HOST = "https://curbmap.com"
+//let AUTH_HOST = "https://curbmap.com"
+let AUTH_HOST = "http://127.0.0.1:8080"
 
 class AuthServices {
-    
+    public static var authServicesBroker = AuthServices()
     // MARK: - Login
     /*
      Takes a function which expects back a result value passed from the server on attempted login
@@ -24,11 +24,6 @@ class AuthServices {
             "username": User.currentUser.getUsername(),
             "password": User.currentUser.getPassword()
         ]
-        if (User.currentUser.getUsername() == "" || User.currentUser.getPassword() == "") {
-            callback(0)
-            return
-        }
-        
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
         ]
@@ -37,9 +32,6 @@ class AuthServices {
             if let responseDict = response.result.value as? [String: Any] {
                 if (responseDict.keys.contains("success")) {
                     if (responseDict["success"] as! Int == 1) {
-                        Mixpanel.mainInstance().identify(
-                            distinctId: Mixpanel.mainInstance().distinctId)
-                        Mixpanel.mainInstance().people.set(properties: ["$name": (User.currentUser.getUsername())])
                         self.processResponse(responseDict, callback: callback)
                     } else {
                         // got error
@@ -49,7 +41,6 @@ class AuthServices {
             }
         }
     }
-    
     
     // MARK: - Signup
     func signup(callback: @escaping (_ result: Int)->Void) -> Void {
@@ -69,19 +60,19 @@ class AuthServices {
             }
         }
     }
-    
-    // MARK: - Logout
     /*
      It might seem counterintuitive, but the user using the device is never actually logged out on the app.
-     This is important so that even on first use the user can upload photos and add lines and do whatever else.
-     They won't get points for these things but they will be able to do them because they will have a token
+     This is important so that even on first use the user can upload photos and add lines and do whatever
+     else. They won't get points for these things but they will be able to do them because they will have
+     a token
      */
     func logout(callback: @escaping (Int)->Void, retries: Int, retriesMax: Int) -> Void {
         if let token = User.currentUser.getToken() {
             let headers = [
                 "Authorization": "Bearer \(token)"
             ]
-            Alamofire.request(AUTH_HOST+"/logout", method: .post, parameters: ["X":"y"], headers: headers).responseJSON { response in
+            
+            Alamofire.request(AUTH_HOST+"/logout", method: .post, headers: headers).responseJSON { response in
                 if var json = response.result.value as? [String: Bool] {
                     if (json["success"] == true) {
                         User.currentUser.setLoggedIn(false)
@@ -94,17 +85,19 @@ class AuthServices {
                         self.login(callback: callback) // log back in as test user
                     }
                 }
-            }
-        } else {
-            // retry with backoff and max retries
-            if (retries + 1 < retriesMax) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(retries), execute: {
-                    // recursive to a point, with cutoff
-                    self.logout(callback: callback, retries: retries + 1, retriesMax: retriesMax)
-                })
+                else {
+                    // retry with backoff and max retries
+                    if (retries + 1 < retriesMax) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(retries), execute: {
+                            // recursive to a point, with cutoff
+                            self.logout(callback: callback, retries: retries + 1, retriesMax: retriesMax)
+                        })
+                    }
+                }
             }
         }
     }
+    
     func updateToken() -> Void {
         login { (result) in
             self.updatedToken(result)
@@ -126,4 +119,3 @@ class AuthServices {
         callback(1)
     }
 }
-
