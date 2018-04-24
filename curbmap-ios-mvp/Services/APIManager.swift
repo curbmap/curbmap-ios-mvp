@@ -80,16 +80,27 @@ class APIManager {
             
         }, usingThreshold:UInt64.init(), to: urlString, method: .post, headers: headers as! HTTPHeaders, encodingCompletion: { encodingResult in
             switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    if let result = response.result.value {
-                        if let success = result as? NSDictionary {
+            case .success(let uploadRequest, _, _):
+                
+                uploadRequest.responseJSON { response in
+//                    if let result = response.result.value {
+//                        if let success = result as? NSDictionary {
                             if let statusCode = response.response?.statusCode {
-                                print("success, status code: \(statusCode)")
-                                callBack("success", nil)
+                                switch statusCode {
+                                case 200...299:
+                                    print("success, status code: \(statusCode)")
+                                    callBack("success", nil)
+                                case 400...499:
+                                    print("Request error, status code: \(statusCode)")
+                                    callBack("error", NSError(domain: "", code: statusCode, userInfo: nil))
+                                default:
+                                    print("server error, status code: \(statusCode)")
+                                    callBack("error", NSError(domain: "", code: statusCode, userInfo: nil))
+                                }
+                                
                             }
-                        }
-                    }
+//                        }
+//                    }
                 }
             case .failure(let encodingError):
                 print("failed to send \(encodingError.localizedDescription)")

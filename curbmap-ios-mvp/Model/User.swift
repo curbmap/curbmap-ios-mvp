@@ -91,12 +91,12 @@ class User : NSObject {
         self.token = token;
     }
     func getToken() -> String? {
-        if (Date() < self.expDate) {
+//        if (Date() < self.expDate) {
             return self.token
-        } else {
-            AuthServices.authServicesBroker.updateToken()
-            return nil
-        }
+//        } else {
+//            AuthServices.authServicesBroker.updateToken()
+//            return nil
+//        }
     }
     func resetKeychain() -> Void {
         try? self.keychain.removeAll()
