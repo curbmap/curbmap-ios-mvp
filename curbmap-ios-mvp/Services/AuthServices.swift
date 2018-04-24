@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 import KeychainAccess
 import Mixpanel
-//let AUTH_HOST = "https://curbmap.com"
-let AUTH_HOST = "http://127.0.0.1:8080"
+let AUTH_HOST = "https://curbmap.com"
+//let AUTH_HOST = "http://127.0.0.1:8080"
 
 class AuthServices {
     public static var authServicesBroker = AuthServices()

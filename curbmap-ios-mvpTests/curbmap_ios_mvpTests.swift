@@ -24,9 +24,11 @@ class curbmap_ios_mvpTests: XCTestCase {
         let logine = expectation(description: "login")
         AuthServices.authServicesBroker.login(callback: {(result) in
             XCTAssert(result == 1) // logging in as test user
+            let x = User.currentUser.getToken()
+            print("TOKEN:", x)
             logine.fulfill()
         })
-        waitForExpectations(timeout: 10.0, handler: nil)
+        waitForExpectations(timeout: 20.0, handler: nil)
     }
     
     func testUserLogout() {
