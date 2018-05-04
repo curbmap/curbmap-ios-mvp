@@ -9,8 +9,6 @@ import Foundation
 import Alamofire
 import KeychainAccess
 import Mixpanel
-let AUTH_HOST = "https://curbmap.com"
-//let AUTH_HOST = "http://127.0.0.1:8080"
 
 class AuthServices {
     public static var authServicesBroker = AuthServices()
@@ -19,6 +17,8 @@ class AuthServices {
      Takes a function which expects back a result value passed from the server on attempted login
      Because calls are async we need to use a callback method.
      */
+    public let AUTH_HOSTNAME = "https://curbmap.com"
+    // public let AUTH_HOSTNAME = "https://9fc5160e.ngrok.io" // TESTING TODO XXX
     func login(callback: @escaping (_ result: Int)->Void) -> Void {
         let parameters = [
             "username": User.currentUser.getUsername(),
@@ -27,8 +27,9 @@ class AuthServices {
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
         ]
+        print("HERE IN LOGIN")
         
-        Alamofire.request(AUTH_HOST+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { response in
+        Alamofire.request(self.AUTH_HOSTNAME+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if let responseDict = response.result.value as? [String: Any] {
                 if (responseDict.keys.contains("success")) {
                     if (responseDict["success"] as! Int == 1) {
@@ -54,7 +55,7 @@ class AuthServices {
             "Content-Type": "application/x-www-form-urlencoded"
         ]
         
-        Alamofire.request(AUTH_HOST+"/signup", method: .post, parameters: parameters, headers: headers).responseJSON { response in
+        Alamofire.request(self.AUTH_HOSTNAME+"/signup", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if var json = response.result.value as? [String: Int] {
                 callback(json["success"]!)
             }
@@ -72,7 +73,7 @@ class AuthServices {
                 "Authorization": "Bearer \(token)"
             ]
             
-            Alamofire.request(AUTH_HOST+"/logout", method: .post, headers: headers).responseJSON { response in
+            Alamofire.request(self.AUTH_HOSTNAME+"/logout", method: .post, headers: headers).responseJSON { response in
                 if var json = response.result.value as? [String: Bool] {
                     if (json["success"] == true) {
                         User.currentUser.setLoggedIn(false)

@@ -16,19 +16,19 @@ class APIManager {
     
     // Singleton for calling on all APIs
     static let shared = APIManager()
-    
+    public let RSRC_HOSTNAME = "https://curbmap.com:50003"
+    // public let RSRC_HOSTNAME = "https://1c4f8969.ngrok.io" // TODO XXX DEBUG
+
     func upLoadImageText(image: UIImage, callBack: @escaping (String?, Error?) -> Void) {
-//        let imageOlc =
         let imageData = self.processImageData(image: image)
         let token = User.currentUser.getToken()!
-        let urlString = "https://curbmap.com:50003/imageUploadText"
-//        let headers = ["Authorization": "Bearer \(User.currentUser.getToken()!)"]
-        
+        let urlString = self.RSRC_HOSTNAME + "/imageUploadText"
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": "Bearer \(token)"
         ]
         let dateFormatter = DateFormatter()
+        
         dateFormatter.timeStyle = .full
         dateFormatter.dateStyle = .full
         dateFormatter.timeZone = Calendar.current.timeZone
@@ -39,9 +39,8 @@ class APIManager {
             MultipartFormData.append("ios".data(using: String.Encoding.utf8)!, withName: "device") // pass string of device type
             MultipartFormData.append(token.data(using: .utf8)!, withName: "token") // pass string of token
             MultipartFormData.append("\(dateFormatter.string(from: Date()))".data(using: String.Encoding.utf8)!, withName: "date") // date of local user at the time the API is called
+            MultipartFormData.append("ios".data(using: .utf8)!, withName: "device_type") // pass that we are using ios not android for return response type
             MultipartFormData.append((TimeZone.current.abbreviation() ?? "").data(using: String.Encoding.utf8)!, withName: "timezone") // time zone of local user
-            MultipartFormData.append("imageOLC+".data(using: String.Encoding.utf8)!, withName: "olc") // location -> string of longitude/latitude (not from picture)
-            MultipartFormData.append("0.0".data(using: String.Encoding.utf8)!, withName: "bearing") // heading, degrees from north, like compass - from CLLocation/device (not from picture)
             MultipartFormData.append(imageData, withName: "image", fileName: "file.jpg", mimeType: "image/jpeg")
         }, usingThreshold:UInt64.init(), to: urlString, method: .post, headers: headers as! HTTPHeaders, encodingCompletion: { encodingResult in
             switch encodingResult {

@@ -9,11 +9,11 @@
 import UIKit
 
 class DisplayViewController: UIViewController {
-
+    
     @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var displayMessage: UILabel!
     var image: UIImage?
-
+    
     // MARK: - View Config
     override func viewDidLoad() {
         if let image = image {
@@ -22,9 +22,7 @@ class DisplayViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let defaultMessage = "Please wait while we read the sign"
-        displayMessage.text = defaultMessage
-        
+        // Old text made less sense than default text that's there in storyboard.
         // calls API
         if let image = self.image {
             APIManager.shared.upLoadImageText(image: image) { (successMessage, error) in
@@ -42,8 +40,4 @@ class DisplayViewController: UIViewController {
         // dismiss viewcontroller and go back to camera view
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-
 }

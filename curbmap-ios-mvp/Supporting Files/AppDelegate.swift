@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Mixpanel.mainInstance().loggingEnabled = true
         Mixpanel.mainInstance().flushInterval = 5
         
-        let authServices = AuthServices()
-        authServices.login { (result) in
+        AuthServices.authServicesBroker.login { (result) in
             print("login result: \(result)")
             // Broadcast successful login
             if result == 1 {
