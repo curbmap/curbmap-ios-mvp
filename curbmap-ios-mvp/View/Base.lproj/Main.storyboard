@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -166,35 +167,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eB-ha-CZD" userLabel="Camera Button">
-                                <rect key="frame" x="187" y="655" width="41" height="41"/>
+                                <rect key="frame" x="187" y="675" width="41" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="VKM-EZ-Ugp"/>
+                                </constraints>
                                 <state key="normal" image="photomarker"/>
                                 <connections>
                                     <action selector="cameraButtonDidPressed:" destination="IVT-a3-UUi" eventType="touchUpInside" id="ce1-d3-hw6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read data from sign and answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHh-Q1-zwD">
-                                <rect key="frame" x="0.0" y="515" width="414" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="GHl-UU-glZ"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="20.333333333333371" text="Read data from sign and answer" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHh-Q1-zwD">
+                                <rect key="frame" x="0.0" y="625" width="414" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yBJ-43-vXw">
-                                <rect key="frame" x="0.0" y="20" width="414" height="495"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yBJ-43-vXw">
+                                <rect key="frame" x="0.0" y="20" width="414" height="605"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yBJ-43-vXw" secondAttribute="height" multiplier="414:605" id="k2K-0B-QqK"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DaY-Qe-Hy0" firstAttribute="trailing" secondItem="IHh-Q1-zwD" secondAttribute="trailing" id="LJ3-sJ-FnC"/>
                             <constraint firstItem="9eB-ha-CZD" firstAttribute="centerX" secondItem="DaY-Qe-Hy0" secondAttribute="centerX" id="MHA-8I-UUr"/>
-                            <constraint firstItem="9eB-ha-CZD" firstAttribute="top" secondItem="IHh-Q1-zwD" secondAttribute="bottom" constant="20" id="VH1-GR-D3Q"/>
-                            <constraint firstItem="DaY-Qe-Hy0" firstAttribute="bottom" secondItem="9eB-ha-CZD" secondAttribute="bottom" constant="40" id="ass-AX-y7S"/>
+                            <constraint firstItem="9eB-ha-CZD" firstAttribute="top" secondItem="IHh-Q1-zwD" secondAttribute="bottom" priority="250" constant="20" id="VH1-GR-D3Q"/>
+                            <constraint firstItem="DaY-Qe-Hy0" firstAttribute="bottom" secondItem="9eB-ha-CZD" secondAttribute="bottom" constant="20" id="ass-AX-y7S"/>
                             <constraint firstItem="yBJ-43-vXw" firstAttribute="top" secondItem="DaY-Qe-Hy0" secondAttribute="top" id="gdo-CC-2zZ"/>
                             <constraint firstItem="yBJ-43-vXw" firstAttribute="leading" secondItem="DaY-Qe-Hy0" secondAttribute="leading" id="ioH-e2-X07"/>
                             <constraint firstItem="IHh-Q1-zwD" firstAttribute="leading" secondItem="DaY-Qe-Hy0" secondAttribute="leading" id="nft-Lz-PQ6"/>
                             <constraint firstItem="yBJ-43-vXw" firstAttribute="centerX" secondItem="DaY-Qe-Hy0" secondAttribute="centerX" id="qgT-5y-Cc8"/>
+                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="centerX" secondItem="DaY-Qe-Hy0" secondAttribute="centerX" id="xf7-fn-kKC"/>
                             <constraint firstItem="IHh-Q1-zwD" firstAttribute="top" secondItem="yBJ-43-vXw" secondAttribute="bottom" id="xpN-0t-gI2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DaY-Qe-Hy0"/>

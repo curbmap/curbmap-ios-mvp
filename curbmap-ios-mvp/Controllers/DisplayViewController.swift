@@ -36,11 +36,11 @@ class DisplayViewController: UIViewController {
         if let image = self.image {
             APIManager.shared.upLoadImageText(heading: heading, location: location, deviceDescription: deviceDescription, image: image) { (successMessage, error) in
                 if let error = error {
-                    // TODO: Show alert to notify user error uploading image
-                    print(error)
+                    self.displayMessage.text = "There was error uploading this image. Please take the picture again. "
                 } else {
                     // TODO: Show alert to notify user image uploaded successfully
                     print(successMessage!)
+                    self.displayMessage.text = "Uploading image success! Thank you!"
                 }
             }
         } else {
