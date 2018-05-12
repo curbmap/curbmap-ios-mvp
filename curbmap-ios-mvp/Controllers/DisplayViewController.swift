@@ -25,15 +25,26 @@ class DisplayViewController: UIViewController {
         let defaultMessage = "Please wait while we read the sign"
         displayMessage.text = defaultMessage
         
-        // calls API
+        // get location/device info of user
+        let currentLocation = LocationServices.currentLocation
+        let heading = currentLocation.getHeading()
+        let location = currentLocation.getLocation()
+        let currentDevice = UIDevice.current
+        let deviceDescription = APIManager.DeviceDescription(name: currentDevice.name, systemName: currentDevice.systemName, systemVersion: currentDevice.systemVersion, model: currentDevice.model)
+        
+        // calls API to upload image and user info
         if let image = self.image {
-            APIManager.shared.upLoadImageText(image: image) { (successMessage, error) in
+            APIManager.shared.upLoadImageText(heading: heading, location: location, deviceDescription: deviceDescription, image: image) { (successMessage, error) in
                 if let error = error {
-                    print(error)
+                    self.displayMessage.text = "There was error uploading this image. Please take the picture again. "
                 } else {
+                    // TODO: Show alert to notify user image uploaded successfully
                     print(successMessage!)
+                    self.displayMessage.text = "Uploading image success! Thank you!"
                 }
             }
+        } else {
+            // TODO: Show alert to notify user error processing image
         }
     }
     
