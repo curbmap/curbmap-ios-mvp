@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // MARK: - TESTING -
+        
+        // MARK: Mixpanel init
+        Mixpanel.initialize(token: "80e860803728a01261a426e576895b30")
+        Mixpanel.mainInstance().loggingEnabled = true
+        Mixpanel.mainInstance().flushInterval = 5
+        
+        AuthServices.authServicesBroker.login { (result) in
+            print("login result: \(result)")
+            // Broadcast successful login
+            if result == 1 {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "login"), object: nil)
+            }
+        }
+        
+        
+        
+        // MARK: - END OF TESTING -
+        
         return true
     }
 

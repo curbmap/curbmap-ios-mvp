@@ -10,7 +10,6 @@ import XCTest
 @testable import curbmap_ios_mvp
 
 class curbmap_ios_mvpTests: XCTestCase {
-    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,16 +20,27 @@ class curbmap_ios_mvpTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testUserLogin() {
+        let logine = expectation(description: "login")
+        AuthServices.authServicesBroker.login(callback: {(result) in
+            XCTAssert(result == 1) // logging in as test user
+            let x = User.currentUser.getToken()
+            print("TOKEN:", x)
+            logine.fulfill()
+        })
+        waitForExpectations(timeout: 20.0, handler: nil)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testUserLogout() {
+        let logoute = expectation(description: "logout")
+        AuthServices.authServicesBroker.logout(callback: {(result) in
+            XCTAssert(result == 1) // logging in as test user
+            logoute.fulfill()
+        }, retries: 0, retriesMax: 3)
+        waitForExpectations(timeout: 15.0, handler: nil)
     }
     
+    func testGotLocation() {
+        XCTAssert(LocationServices.currentLocation.getLocation() != nil)
+    }
 }
