@@ -18,6 +18,7 @@ class DisplayViewController: UIViewController {
     override func viewDidLoad() {
         if let image = image {
             capturedImage.image = image
+            displayMessage.text = "Uploading signs..."
         }
     }
     
@@ -34,8 +35,10 @@ class DisplayViewController: UIViewController {
             APIManager.shared.uploadImage(heading: heading, location: location, deviceDescription: deviceDescription, image: image) { (successMessage, error) in
                 if let error = error {
                     print(error)
+                    self.displayMessage.text = "Upload Error"
                 } else {
-                    print(successMessage!)
+                    self.displayMessage.text = "Upload Success!"
+                    
                 }
             }
         }
