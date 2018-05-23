@@ -171,17 +171,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing sign..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHh-Q1-zwD">
-                                <rect key="frame" x="0.0" y="597" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="619" width="414" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can close this and we'll let you know when it's done." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-pi-HeJ">
-                                <rect key="frame" x="20" y="645" width="374" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Mhx-xR-6DU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -204,18 +195,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="s0v-pi-HeJ" firstAttribute="leading" secondItem="JiM-TH-WLB" secondAttribute="leadingMargin" id="1gb-7Y-Ydb"/>
-                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="centerX" secondItem="s0v-pi-HeJ" secondAttribute="centerX" id="80i-75-nAj"/>
-                            <constraint firstItem="s0v-pi-HeJ" firstAttribute="centerX" secondItem="9eB-ha-CZD" secondAttribute="centerX" id="BG2-wc-31y"/>
                             <constraint firstItem="yBJ-43-vXw" firstAttribute="leading" secondItem="JiM-TH-WLB" secondAttribute="leading" id="GAK-1R-0Al"/>
-                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="top" secondItem="yBJ-43-vXw" secondAttribute="bottom" constant="8" symbolic="YES" id="Hwj-26-CkM"/>
+                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="top" secondItem="yBJ-43-vXw" secondAttribute="bottom" constant="30" id="Hwj-26-CkM"/>
                             <constraint firstItem="IHh-Q1-zwD" firstAttribute="leading" secondItem="yBJ-43-vXw" secondAttribute="leading" id="Wkm-mo-vyy"/>
                             <constraint firstItem="IHh-Q1-zwD" firstAttribute="trailing" secondItem="yBJ-43-vXw" secondAttribute="trailing" id="YQ7-YY-7sS"/>
                             <constraint firstAttribute="trailing" secondItem="yBJ-43-vXw" secondAttribute="trailing" id="eUx-Lv-d9x"/>
                             <constraint firstItem="9eB-ha-CZD" firstAttribute="leading" secondItem="DaY-Qe-Hy0" secondAttribute="leading" constant="126" id="gkW-tn-8Si"/>
-                            <constraint firstItem="s0v-pi-HeJ" firstAttribute="top" secondItem="IHh-Q1-zwD" secondAttribute="bottom" constant="8" symbolic="YES" id="r8h-Ct-XM9"/>
                             <constraint firstAttribute="bottom" secondItem="9eB-ha-CZD" secondAttribute="bottom" constant="20" symbolic="YES" id="sg5-8v-mha"/>
-                            <constraint firstItem="9eB-ha-CZD" firstAttribute="top" secondItem="s0v-pi-HeJ" secondAttribute="bottom" constant="8" symbolic="YES" id="um2-Ap-uwf"/>
+                            <constraint firstItem="9eB-ha-CZD" firstAttribute="centerX" secondItem="JiM-TH-WLB" secondAttribute="centerX" id="wjn-nZ-W7W"/>
                             <constraint firstItem="yBJ-43-vXw" firstAttribute="top" secondItem="DaY-Qe-Hy0" secondAttribute="top" id="xs4-hS-E04"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DaY-Qe-Hy0"/>
