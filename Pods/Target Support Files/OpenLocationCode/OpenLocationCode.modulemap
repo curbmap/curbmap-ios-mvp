@@ -1,0 +1,6 @@
+framework module OpenLocationCode {
+  umbrella header "OpenLocationCode-umbrella.h"
+
+  export *
+  module * { export * }
+}

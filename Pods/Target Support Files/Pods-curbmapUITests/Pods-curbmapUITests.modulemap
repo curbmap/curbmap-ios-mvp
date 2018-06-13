@@ -1,0 +1,6 @@
+framework module Pods_curbmapUITests {
+  umbrella header "Pods-curbmapUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

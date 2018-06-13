@@ -1,0 +1,6 @@
+framework module Pods_curbmap {
+  umbrella header "Pods-curbmap-umbrella.h"
+
+  export *
+  module * { export * }
+}
