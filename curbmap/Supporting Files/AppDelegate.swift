@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Mixpanel.mainInstance().flushInterval = 5
         
         AuthServices.authServicesBroker.login { (result) in
-            print("XXXX")
-            print("login result: \(result)")
             // Broadcast successful login
             if result == 1 {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "login"), object: nil)

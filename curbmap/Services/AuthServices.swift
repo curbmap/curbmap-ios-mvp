@@ -27,12 +27,10 @@ class AuthServices {
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
         ]
-        print("HERE IN LOGIN")
         
         Alamofire.request(self.AUTH_HOSTNAME+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if let responseDict = response.result.value as? [String: Any] {
                 if (responseDict.keys.contains("success")) {
-                    print("YYYY: \(responseDict)")
                     if (responseDict["success"] as! Int == 1) {
                         self.processResponse(responseDict, callback: callback)
                     } else {
