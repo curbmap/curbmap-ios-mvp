@@ -92,6 +92,7 @@ class User : NSObject {
     }
     func getToken() -> String? {
         if (Date() < self.expDate) {
+            print("EXP DATE:\(self.expDate)")
             return self.token
         } else {
             AuthServices.authServicesBroker.updateToken()

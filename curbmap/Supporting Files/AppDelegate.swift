@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Mixpanel.mainInstance().flushInterval = 5
         
         AuthServices.authServicesBroker.login { (result) in
+            print("XXXX")
             print("login result: \(result)")
             // Broadcast successful login
             if result == 1 {
@@ -32,10 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        
-        
         // MARK: - END OF TESTING -
-        
+        // MARK: - REQUEST LOCATION ON APP START -
+        var currentLocation = LocationServices.currentLocation
         return true
     }
 

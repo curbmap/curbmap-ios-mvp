@@ -32,6 +32,7 @@ class AuthServices {
         Alamofire.request(self.AUTH_HOSTNAME+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if let responseDict = response.result.value as? [String: Any] {
                 if (responseDict.keys.contains("success")) {
+                    print("YYYY: \(responseDict)")
                     if (responseDict["success"] as! Int == 1) {
                         self.processResponse(responseDict, callback: callback)
                     } else {
@@ -107,6 +108,7 @@ class AuthServices {
     
     private func updatedToken(_ value: Int) -> Void {
         // Just receives the login value, not sure we need it at this moment unless to detect errors
+        print("UPDATED TOKEN: \(value)")
     }
     
     // MARK: - Process response when a user is logged in
