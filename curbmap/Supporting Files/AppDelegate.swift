@@ -32,8 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // MARK: - END OF TESTING -
-        // MARK: - REQUEST LOCATION ON APP START -
-        var currentLocation = LocationServices.currentLocation
         return true
     }
 
