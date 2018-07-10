@@ -27,7 +27,6 @@ class AuthServices {
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
         ]
-        print("HERE IN LOGIN")
         
         Alamofire.request(self.AUTH_HOSTNAME+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if let responseDict = response.result.value as? [String: Any] {
@@ -107,6 +106,7 @@ class AuthServices {
     
     private func updatedToken(_ value: Int) -> Void {
         // Just receives the login value, not sure we need it at this moment unless to detect errors
+        print("UPDATED TOKEN: \(value)")
     }
     
     // MARK: - Process response when a user is logged in
