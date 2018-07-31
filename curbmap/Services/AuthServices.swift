@@ -27,7 +27,6 @@ class AuthServices {
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
         ]
-        print("HERE IN LOGIN")
         
         Alamofire.request(self.AUTH_HOSTNAME+"/login", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if let responseDict = response.result.value as? [String: Any] {
@@ -77,7 +76,7 @@ class AuthServices {
                 if var json = response.result.value as? [String: Bool] {
                     if (json["success"] == true) {
                         User.currentUser.setLoggedIn(false)
-                        User.currentUser.setBadge([false])
+                        User.currentUser.setBadge([1])
                         User.currentUser.setUsername("curbmaptest")
                         User.currentUser.setPassword("TestCurbm@p1")
                         User.currentUser.setToken(nil)
@@ -107,12 +106,13 @@ class AuthServices {
     
     private func updatedToken(_ value: Int) -> Void {
         // Just receives the login value, not sure we need it at this moment unless to detect errors
+        print("UPDATED TOKEN: \(value)")
     }
     
     // MARK: - Process response when a user is logged in
     private func processResponse(_ responseDict: [String: Any], callback: (_ result: Int)->Void) {
-        User.currentUser.setBadge(responseDict["badge"] as! [Bool])
-        User.currentUser.setScore((Int64)((responseDict["score"] as! NSString).intValue))
+        User.currentUser.setBadge(responseDict["badge"] as! [Int])
+        User.currentUser.setScore(responseDict["score"] as! Int64)
         User.currentUser.setToken(responseDict["token"] as? String)
         User.currentUser.setExpDate(Calendar.current.date(byAdding: .day, value: 1, to: Date())!);
         User.currentUser.setEmail(responseDict["email"] as! String)

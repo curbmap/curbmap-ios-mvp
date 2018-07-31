@@ -17,7 +17,7 @@ class APIManager {
     
     // Singleton for calling on all APIs
     static let shared = APIManager()
-    let RSRC_HOSTNAME = "https://curbmap.com:50003"
+    let RSRC_HOSTNAME = "https://curbmap.com:50003/v1"
     // public let RSRC_HOSTNAME = "https://1c4f8969.ngrok.io" // TODO XXX DEBUG
     
     struct DeviceDescription {
@@ -55,7 +55,7 @@ class APIManager {
         let imageData = self.processImageData(image: image)
         let token = User.currentUser.getToken()!
         
-        let urlString = self.RSRC_HOSTNAME + "/imageUpload"
+        let urlString = self.RSRC_HOSTNAME + "/image/upload"
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": "Bearer \(token)"
