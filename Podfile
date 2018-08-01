@@ -8,6 +8,10 @@ pod 'KeychainAccess'
 pod 'OpenLocationCode'
 pod 'ReactiveSwift', '~> 3.1'
 pod 'ReactiveCocoa', '~> 7.1'
+pod "PromiseKit", "~> 6.0"
+pod "PromiseKit/MapKit"          # MKDirections().calculate().then { /*…*/ }
+pod "PromiseKit/CoreLocation"    # CLLocationManager.requestLocation().then { /*...*/ }
+pod 'PromiseKit/Alamofire' 
 pod 'SnapKit', '~> 4.0.0'
 pod 'NVActivityIndicatorView'
 pod 'Mixpanel-swift', :git=> 'https://github.com/mixpanel/mixpanel-swift.git', :branch=> 'swift4'

@@ -10,6 +10,22 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.2.1)
   - NVActivityIndicatorView/Presenter (4.2.1)
   - OpenLocationCode (0.0.5.2)
+  - PromiseKit (6.2.8):
+    - PromiseKit/CorePromise (= 6.2.8)
+    - PromiseKit/Foundation (= 6.2.8)
+    - PromiseKit/UIKit (= 6.2.8)
+  - PromiseKit/Alamofire (6.2.8):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/CoreLocation (6.2.8):
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (6.2.8)
+  - PromiseKit/Foundation (6.2.8):
+    - PromiseKit/CorePromise
+  - PromiseKit/MapKit (6.2.8):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.2.8):
+    - PromiseKit/CorePromise
   - ReactiveCocoa (7.2.0):
     - ReactiveSwift (~> 3.1)
   - ReactiveSwift (3.1.0):
@@ -24,6 +40,10 @@ DEPENDENCIES:
   - Mixpanel-swift (from `https://github.com/mixpanel/mixpanel-swift.git`, branch `swift4`)
   - NVActivityIndicatorView
   - OpenLocationCode
+  - PromiseKit (~> 6.0)
+  - PromiseKit/Alamofire
+  - PromiseKit/CoreLocation
+  - PromiseKit/MapKit
   - ReactiveCocoa (~> 7.1)
   - ReactiveSwift (~> 3.1)
   - SnapKit (~> 4.0.0)
@@ -35,6 +55,7 @@ SPEC REPOS:
     - KeychainAccess
     - NVActivityIndicatorView
     - OpenLocationCode
+    - PromiseKit
     - ReactiveCocoa
     - ReactiveSwift
     - Result
@@ -57,11 +78,12 @@ SPEC CHECKSUMS:
   Mixpanel-swift: 2cd7aac92ad4e9ba2957479c6e6db9b9170944bb
   NVActivityIndicatorView: 8068ba3ad39cb44cbaab25d89ff2546b3f092681
   OpenLocationCode: 9fcfb120d9e11a91842b91e3517ab432a3c23c3b
+  PromiseKit: 6788ce1a0ed5448b83d4aaf56b9fc49fb7647d32
   ReactiveCocoa: 476dae7ca790f40d30d186a1bd7ebae4290395d5
   ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: aaecae6b6d95744b3707bcc7d87e16f100fbf7cc
+PODFILE CHECKSUM: 1dadceba2f8d1454b81f62a96f6ae7c56505679c
 
 COCOAPODS: 1.5.3

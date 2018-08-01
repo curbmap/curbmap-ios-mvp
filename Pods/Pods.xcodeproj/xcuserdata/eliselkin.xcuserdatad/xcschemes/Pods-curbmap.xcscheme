@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7A4E1ADB7E6AFB766994316D8CBC078F"
+               BlueprintIdentifier = "83BCA0C27F4C1AFA0D993E37F3264DF0"
                BuildableName = "Pods_curbmap.framework"
                BlueprintName = "Pods-curbmap"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A4E1ADB7E6AFB766994316D8CBC078F"
+            BlueprintIdentifier = "83BCA0C27F4C1AFA0D993E37F3264DF0"
             BuildableName = "Pods_curbmap.framework"
             BlueprintName = "Pods-curbmap"
             ReferencedContainer = "container:Pods.xcodeproj">
