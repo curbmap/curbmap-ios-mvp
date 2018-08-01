@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WHl-qn-Jkg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WHl-qn-Jkg">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="curbmap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="650"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,13 +28,13 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="586"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svt-A9-QFy" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="757"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1020"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curbmaplogo" translatesAutoresizingMaskIntoConstraints="NO" id="m7L-L5-Kq7">
-                                                <rect key="frame" x="50" y="30" width="275" height="310"/>
+                                                <rect key="frame" x="50" y="30" width="275" height="573"/>
                                             </imageView>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHa-Bp-coh">
-                                                <rect key="frame" x="50" y="380" width="275" height="30"/>
+                                                <rect key="frame" x="50" y="643" width="275" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="username"/>
@@ -43,7 +43,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgw-Lf-5g5">
-                                                <rect key="frame" x="50" y="440" width="275" height="30"/>
+                                                <rect key="frame" x="50" y="703" width="275" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
@@ -52,7 +52,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8B-BD-mCl">
-                                                <rect key="frame" x="50" y="510" width="275" height="47"/>
+                                                <rect key="frame" x="50" y="773" width="275" height="47"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="25"/>
                                                 <state key="normal" title="LOG IN ">
                                                     <color key="titleColor" red="0.18501663208007812" green="0.65008234977722168" blue="0.75519317388534546" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -117,7 +117,7 @@
         <!--Camera View Controller-->
         <scene sceneID="Ev5-Jr-3oV">
             <objects>
-                <viewController id="qXl-4i-ZHM" customClass="CameraViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qXl-4i-ZHM" customClass="CameraViewController" customModule="curbmap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jEU-ZH-Z2R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,45 +165,46 @@
         <!--Display View Controller-->
         <scene sceneID="Mum-E3-9Le">
             <objects>
-                <viewController id="IVT-a3-UUi" customClass="DisplayViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IVT-a3-UUi" customClass="DisplayViewController" customModule="curbmap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JiM-TH-WLB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing sign..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHh-Q1-zwD">
-                                <rect key="frame" x="0.0" y="619" width="414" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yBJ-43-vXw">
-                                <rect key="frame" x="0.0" y="20" width="414" height="569"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="569" id="iZc-xy-JJP"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="414" height="589"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eB-ha-CZD" userLabel="Camera Button">
-                                <rect key="frame" x="126" y="688" width="162" height="28"/>
+                                <rect key="frame" x="126" y="688" width="163" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="iLB-Wk-rCW"/>
+                                    <constraint firstAttribute="height" constant="28" id="bCc-ym-lFy"/>
                                 </constraints>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="cameraButtonDidPressed:" destination="IVT-a3-UUi" eventType="touchUpInside" id="ce1-d3-hw6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing sign..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHh-Q1-zwD">
+                                <rect key="frame" x="27" y="617" width="360" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="jaf-PR-2rG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yBJ-43-vXw" firstAttribute="leading" secondItem="JiM-TH-WLB" secondAttribute="leading" id="GAK-1R-0Al"/>
-                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="top" secondItem="yBJ-43-vXw" secondAttribute="bottom" constant="30" id="Hwj-26-CkM"/>
-                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="leading" secondItem="yBJ-43-vXw" secondAttribute="leading" id="Wkm-mo-vyy"/>
-                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="trailing" secondItem="yBJ-43-vXw" secondAttribute="trailing" id="YQ7-YY-7sS"/>
-                            <constraint firstAttribute="trailing" secondItem="yBJ-43-vXw" secondAttribute="trailing" id="eUx-Lv-d9x"/>
-                            <constraint firstItem="9eB-ha-CZD" firstAttribute="leading" secondItem="DaY-Qe-Hy0" secondAttribute="leading" constant="126" id="gkW-tn-8Si"/>
-                            <constraint firstAttribute="bottom" secondItem="9eB-ha-CZD" secondAttribute="bottom" constant="20" symbolic="YES" id="sg5-8v-mha"/>
-                            <constraint firstItem="9eB-ha-CZD" firstAttribute="centerX" secondItem="JiM-TH-WLB" secondAttribute="centerX" id="wjn-nZ-W7W"/>
-                            <constraint firstItem="yBJ-43-vXw" firstAttribute="top" secondItem="DaY-Qe-Hy0" secondAttribute="top" id="xs4-hS-E04"/>
+                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="centerX" secondItem="9eB-ha-CZD" secondAttribute="centerX" id="2E5-vT-MdW"/>
+                            <constraint firstAttribute="bottom" secondItem="9eB-ha-CZD" secondAttribute="bottom" constant="20" symbolic="YES" id="4kM-rF-mqv"/>
+                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="top" secondItem="yBJ-43-vXw" secondAttribute="bottom" constant="8" symbolic="YES" id="5AN-Rp-PgE"/>
+                            <constraint firstItem="yBJ-43-vXw" firstAttribute="leading" secondItem="JiM-TH-WLB" secondAttribute="leading" id="7al-8E-Faz"/>
+                            <constraint firstItem="9eB-ha-CZD" firstAttribute="leading" secondItem="DaY-Qe-Hy0" secondAttribute="leading" constant="126" id="BJd-oJ-Vdp"/>
+                            <constraint firstItem="yBJ-43-vXw" firstAttribute="centerX" secondItem="IHh-Q1-zwD" secondAttribute="centerX" id="UKO-1r-oxS"/>
+                            <constraint firstItem="9eB-ha-CZD" firstAttribute="top" secondItem="IHh-Q1-zwD" secondAttribute="bottom" constant="8" symbolic="YES" id="UfX-0V-ynw"/>
+                            <constraint firstItem="yBJ-43-vXw" firstAttribute="top" secondItem="DaY-Qe-Hy0" secondAttribute="top" id="cbR-rg-yHD"/>
+                            <constraint firstAttribute="trailing" secondItem="yBJ-43-vXw" secondAttribute="trailing" id="hyV-Wq-Bbn"/>
+                            <constraint firstItem="IHh-Q1-zwD" firstAttribute="leading" secondItem="DaY-Qe-Hy0" secondAttribute="leading" constant="27" id="puF-U6-StJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DaY-Qe-Hy0"/>
                     </view>
@@ -214,12 +215,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRX-FO-ZOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1211.5942028985507" y="847.82608695652175"/>
+            <point key="canvasLocation" x="1210.4000000000001" y="846.9265367316342"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="nQF-46-I5O">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qTf-gk-lSN" customClass="NavigationViewController" customModule="curbmap_ios_mvp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qTf-gk-lSN" customClass="NavigationViewController" customModule="curbmap" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nhz-Ip-kzc">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -254,7 +255,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="curbmaplogo" width="330" height="310"/>
+        <image name="curbmaplogo" width="433" height="573"/>
         <image name="photo" width="544" height="544"/>
     </resources>
 </document>
