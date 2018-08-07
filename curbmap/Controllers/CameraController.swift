@@ -88,6 +88,24 @@ class CameraController: NSObject {
         view.layer.insertSublayer(self.previewLayer!, at: 0)
         self.previewLayer?.frame = view.frame
     }
+	
+	func cameraViewZoomedBy(zoomFactor: CGFloat) {
+		guard let camera = rearCamera  else { return }
+		let minVideoZoomFactor = camera.minAvailableVideoZoomFactor
+		let maxVideoZoomFactor = camera.maxAvailableVideoZoomFactor
+//		if zoomFactor <= camera.videoZoomFactor {
+			// lock then unlock
+		try? camera.lockForConfiguration()
+		if zoomFactor >= 1.0 {
+			camera.ramp(toVideoZoomFactor: zoomFactor < maxVideoZoomFactor ? zoomFactor : maxVideoZoomFactor, withRate: 3.0)
+		}
+		if zoomFactor <= 1.0 {
+			camera.ramp(toVideoZoomFactor: zoomFactor >= minVideoZoomFactor ? zoomFactor : minVideoZoomFactor, withRate: 3.0)
+		}
+		try? camera.unlockForConfiguration()
+//		}
+	}
+	
     func captureImage(completion: @escaping (UIImage?, Error?)-> Void){
         guard let captureSession = captureSession, captureSession.isRunning else { completion(nil, cameraControllerError.captureSessionIsMissing)
             return
