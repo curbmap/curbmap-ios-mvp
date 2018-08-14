@@ -47,7 +47,6 @@
 		D5A7ECD520C3538A001A2629 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7ECB120C3538A001A2629 /* User.swift */; };
 		D5A7ECD620C35504001A2629 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8D20C35389001A2629 /* CameraController.swift */; };
 		D5A7ECD720C35504001A2629 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8E20C35389001A2629 /* DisplayViewController.swift */; };
-		D5A7ECD820C35504001A2629 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8F20C35389001A2629 /* CameraViewController.swift */; };
 		D5A7ECDA20C35504001A2629 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC9120C35389001A2629 /* NavigationViewController.swift */; };
 		D5A7ECDB20C35504001A2629 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC9220C35389001A2629 /* LoginViewController.swift */; };
 		D5A7ECDC20C35508001A2629 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7ECB120C3538A001A2629 /* User.swift */; };
@@ -578,7 +577,6 @@
 				D5A7ECD620C35504001A2629 /* CameraController.swift in Sources */,
 				D5A7ECDE20C3550E001A2629 /* AuthServices.swift in Sources */,
 				D5A7ECDC20C35508001A2629 /* User.swift in Sources */,
-				D5A7ECD820C35504001A2629 /* CameraViewController.swift in Sources */,
 				D5A7ECD720C35504001A2629 /* DisplayViewController.swift in Sources */,
 				D5A7EC8520C35334001A2629 /* curbmapTests.swift in Sources */,
 			);
