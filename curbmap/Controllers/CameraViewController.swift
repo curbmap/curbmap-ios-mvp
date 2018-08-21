@@ -11,13 +11,7 @@ import Photos
 
 class CameraViewController: UIViewController {
     
-	@IBOutlet weak var capturePreviewView: UIView! {
-		didSet {
-			let pinch = UIPinchGestureRecognizer(target: self, action: #selector(pinchToZoom(_:)))
-			capturePreviewView.addGestureRecognizer(pinch)
-		}
-	}
-	
+    @IBOutlet weak var caturePreviewView: UIView!
     let cameraController = CameraController()
     var stillImage: UIImage?
     
@@ -30,7 +24,7 @@ class CameraViewController: UIViewController {
                 if let error = error {
                     print(error)
                 }
-                try? self.cameraController.displayPreview(on: self.capturePreviewView)
+                try? self.cameraController.displayPreview(on: self.caturePreviewView)
             }
         }
         configureCameraController()
@@ -64,16 +58,7 @@ class CameraViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-	
-	@objc func pinchToZoom(_ pinchGestureRecognizer:UIPinchGestureRecognizer) {
-		switch pinchGestureRecognizer.state {
-		case .changed:
-			cameraController.cameraViewZoomedBy(zoomFactor: pinchGestureRecognizer.scale)
-		default: break
-		}
-	}
-	
-	
+    
     // MARK: - Segue -
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let displayViewController = segue.destination as! DisplayViewController
