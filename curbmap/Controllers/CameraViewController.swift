@@ -14,7 +14,10 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var capturePreviewView: UIView! {
         didSet {
             let pinch = UIPinchGestureRecognizer(target: self, action: #selector(pinchToZoom(_:)))
-            self.capturePreviewView.addGestureRecognizer(pinch)
+            capturePreviewView.addGestureRecognizer(pinch)
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapToFocus(_ :)))
+            capturePreviewView.addGestureRecognizer(tap)
         }
     }
     
@@ -70,6 +73,12 @@ class CameraViewController: UIViewController {
         case .changed:
             cameraController.cameraViewZoomedBy(zoomFactor: pinchGestureRecognizer.scale)
         default: break
+        }
+    }
+    
+    @objc func tapToFocus(_ tapGestureRecognizer: UITapGestureRecognizer) {
+        if tapGestureRecognizer.state == .ended {
+            cameraController.focusIn(location: tapGestureRecognizer.location(in: capturePreviewView), in: capturePreviewView)
         }
     }
     

@@ -102,8 +102,33 @@ class CameraController: NSObject {
         if zoomFactor <= 1.0 {
             camera.ramp(toVideoZoomFactor: zoomFactor >= minVideoZoomFactor ? zoomFactor : minVideoZoomFactor, withRate: 3.0)
         }
-        try? camera.unlockForConfiguration()
-        //        }
+        camera.unlockForConfiguration()
+    }
+    
+    func focusIn(location: CGPoint, in previewView: UIView) {
+        let thisFocusPoint = location
+        
+        print("touch to focus ", thisFocusPoint)
+        
+        let focus_x = thisFocusPoint.x / previewView.frame.size.width
+        let focus_y = thisFocusPoint.y / previewView.frame.size.height
+        
+        if (rearCamera!.isFocusModeSupported(.autoFocus) && rearCamera!.isFocusPointOfInterestSupported) {
+            do {
+                try rearCamera?.lockForConfiguration()
+                rearCamera?.focusMode = .autoFocus
+                rearCamera?.focusPointOfInterest = CGPoint(x: focus_x, y: focus_y)
+                
+                if (rearCamera!.isExposureModeSupported(.autoExpose) && rearCamera!.isExposurePointOfInterestSupported) {
+                    rearCamera?.exposureMode = .autoExpose;
+                    rearCamera?.exposurePointOfInterest = CGPoint(x: focus_x, y: focus_y);
+                }
+                
+                rearCamera?.unlockForConfiguration()
+            } catch {
+                print(error)
+            }
+        }
     }
     
     func captureImage(completion: @escaping (UIImage?, Error?)-> Void){
