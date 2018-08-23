@@ -20,6 +20,8 @@ class CameraViewController: UIViewController {
     
     let cameraController = CameraController()
     var stillImage: UIImage?
+    var currentLocation: CLLocation?
+    var currentHeading: CLHeading?
     
     override func viewDidLoad() {
         // hide navigation bar
@@ -37,7 +39,9 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func cameraButtonDidPressed(_ sender: UIButton) {
-        if let _ = LocationServices.currentLocation.getLocation() {
+        if let location = LocationServices.currentLocation.getLocation(), let heading = LocationServices.currentLocation.getHeading() {
+            currentLocation = location
+            currentHeading = heading
             cameraController.captureImage { (image, error) in
                 if let error = error {
                     print(error)
@@ -75,15 +79,12 @@ class CameraViewController: UIViewController {
     
     // MARK: - Segue -
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let displayViewController = segue.destination as! DisplayViewController
-        if let stillImage = stillImage {
+        if let displayViewController = segue.destination as? DisplayViewController {
             displayViewController.image = stillImage
-        } else {
-            print("error no stillimage")
+            displayViewController.currentLocation = currentLocation
+            displayViewController.currentHeading = currentHeading
         }
     }
-    
-    
     
 }
 

@@ -102,7 +102,7 @@ class CameraController: NSObject {
         if zoomFactor <= 1.0 {
             camera.ramp(toVideoZoomFactor: zoomFactor >= minVideoZoomFactor ? zoomFactor : minVideoZoomFactor, withRate: 3.0)
         }
-        try? camera.unlockForConfiguration()
+        camera.unlockForConfiguration()
         //        }
     }
     
