@@ -14,10 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // MARK: - TESTING -
+
+        // MARK: First use of location services
+        let _ = LocationServices.currentLocation.isFollowing()
         
         // MARK: Mixpanel init
         Mixpanel.initialize(token: "80e860803728a01261a426e576895b30")

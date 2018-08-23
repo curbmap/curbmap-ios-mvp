@@ -8,6 +8,9 @@
 
 import UIKit
 import Photos
+import RxCoreLocation
+import RxSwift
+import RxCocoa
 
 class CameraViewController: UIViewController {
     
@@ -19,11 +22,35 @@ class CameraViewController: UIViewController {
     }
     
     let cameraController = CameraController()
+    let bag = DisposeBag()
     var stillImage: UIImage?
+    var cameraLocationAvailable = Variable<Bool>(false);
     var currentLocation: CLLocation?
     var currentHeading: CLHeading?
-    
     override func viewDidLoad() {
+        // start getting location
+        LocationServices.currentLocation.locationManager.rx
+            .didUpdateLocations
+            .debug("didUpdateLocations")
+            .subscribe(onNext: {value in
+                self.currentLocation = value.locations.last;
+                if let heading = self.currentHeading {
+                    self.cameraLocationAvailable.value = true
+                } else {
+                    self.cameraLocationAvailable.value = false
+                }
+            }).disposed(by: bag)
+        LocationServices.currentLocation.locationManager.rx
+            .didUpdateHeading
+            .debug("didUpdateHeading")
+            .subscribe(onNext: {value in
+                self.currentHeading = value.newHeading
+                if let location = self.currentLocation {
+                    self.cameraLocationAvailable.value = true
+                } else {
+                    self.cameraLocationAvailable.value = false
+                }
+            }).disposed(by: bag)
         // hide navigation bar
         self.navigationController?.navigationBar.isHidden = true
         
@@ -39,34 +66,24 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func cameraButtonDidPressed(_ sender: UIButton) {
-        if let location = LocationServices.currentLocation.getLocation(), let heading = LocationServices.currentLocation.getHeading() {
-            currentLocation = location
-            currentHeading = heading
-            cameraController.captureImage { (image, error) in
-                if let error = error {
-                    print(error)
-                } else if let image = image {
-                    self.stillImage = image
-                    self.performSegue(withIdentifier: "cameraSegue", sender: sender)
-                } else {
-                    print("unknown error")
+        cameraLocationAvailable.asObservable().subscribe(onNext: {value in
+            // it starts as false, so any next value will be true
+            if (value == true) { // just explicit test
+                // camera has location and heading!
+                self.cameraController.captureImage { (image, error) in
+                    if let error = error {
+                        print(error)
+                    } else if let image = image {
+                        self.stillImage = image
+                        DispatchQueue.main.async {
+                          self.performSegue(withIdentifier: "cameraSegue", sender: sender)
+                        }
+                    } else {
+                        print("unknown error")
+                    }
                 }
             }
-        } else {
-            let alert = UIAlertController(title: "Location services", message: "Location services are required for photos to have necessary data. If you wish to help make parking easier, allow location services in settings.", preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Settings", style: .default) {(_)-> Void in
-                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
-                    return
-                }
-                if UIApplication.shared.canOpenURL(settingsUrl) {
-                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                        print("Settings opened: \(success)") // Prints true
-                    })
-                }
-            })
-            alert.addAction(UIAlertAction(title: "Cancel", style:.cancel, handler: nil))
-            present(alert, animated: true, completion: nil)
-        }
+        }).dispose()
     }
     
     @objc func pinchToZoom(_ pinchGestureRecognizer:UIPinchGestureRecognizer) {
