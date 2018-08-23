@@ -6,34 +6,35 @@
 //
 
 import Foundation
-import MapKit
+import CoreLocation
+import RxCoreLocation
+import RxSwift
+import RxCocoa
 
-class LocationServices: NSObject, CLLocationManagerDelegate {
+class LocationServices: NSObject {
     public static var currentLocation = LocationServices(true)
-    private var heading: CLHeading!
-    private var lastPosition: CLLocation!
-    private var locationManager: CLLocationManager!
+    public var locationManager: CLLocationManager!
+    public var lastLocation: CLLocation?
+    public var lastHeading: CLHeading?
     private var following: Bool
+    var bag = DisposeBag()
     
     private init(_ following: Bool) {
         self.following = following
+        super.init()
         self.locationManager = CLLocationManager()
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
         self.locationManager.startUpdatingHeading()
-        super.init()
-        self.locationManager.delegate = self
+        self.locationManager.rx
+            .didChangeAuthorization
+            .debug("didChangeAuthorization")
+            .subscribe(onNext: { value in
+                print("A VALUE:", value.status.rawValue) // 2 == OFF, 4 == While using
+            })
+            .disposed(by: bag)
     }
-    
-    public func getLocation() -> CLLocation? {
-        return locationManager.location
-    }
-    
-    public func getHeading() -> CLHeading? {
-        return locationManager.heading
-    }
-    
     public func setFollowing(follow: Bool) -> Void {
         self.following = follow
     }
@@ -42,26 +43,4 @@ class LocationServices: NSObject, CLLocationManagerDelegate {
         return self.following
     }
     
-    internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse || status == .authorizedAlways {
-            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-                if CLLocationManager.isRangingAvailable() {
-                    // do stuff
-                    self.locationManager.startUpdatingLocation()
-                    self.locationManager.startUpdatingHeading()
-                }
-            }
-        }
-    }
-    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if (self.following && manager.location != nil) {
-            User.currentUser.setLocation(manager.location!)
-        }
-    }
-    
-    internal func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        if (manager.location != nil) {
-            User.currentUser.setHeading(manager.heading!)
-        }
-    }
 }
