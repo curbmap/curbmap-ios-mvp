@@ -28,6 +28,9 @@ class CameraViewController: UIViewController {
     var currentLocation: CLLocation?
     var currentHeading: CLHeading?
     override func viewDidLoad() {
+        // These subscriptions will monitor for changes to location and heading
+        // and will set currentLocation/Heading as well as determine if both are
+        // set to release the didPressed option to capture the image
         // start getting location
         LocationServices.currentLocation.locationManager.rx
             .didUpdateLocations
@@ -40,6 +43,7 @@ class CameraViewController: UIViewController {
                     self.cameraLocationAvailable.value = false
                 }
             }).disposed(by: bag)
+        // start getting heading
         LocationServices.currentLocation.locationManager.rx
             .didUpdateHeading
             .debug("didUpdateHeading")
@@ -66,9 +70,10 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func cameraButtonDidPressed(_ sender: UIButton) {
-        cameraLocationAvailable.asObservable().subscribe(onNext: {value in
-            // it starts as false, so any next value will be true
-            if (value == true) { // just explicit test
+        // Only present the captured photo if the single-use subscription to the bool
+        // value that says it's ok to to use the camera's location
+        cameraLocationAvailable.asObservable().subscribe(onNext: {isCameraAvailable in
+            if (isCameraAvailable) {
                 // camera has location and heading!
                 self.cameraController.captureImage { (image, error) in
                     if let error = error {

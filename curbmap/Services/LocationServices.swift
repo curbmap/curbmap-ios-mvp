@@ -27,16 +27,33 @@ class LocationServices: NSObject {
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
         self.locationManager.startUpdatingHeading()
+        
+        // Monitor for changes to authorizations
         self.locationManager.rx
             .didChangeAuthorization
             .debug("didChangeAuthorization")
             .subscribe(onNext: { value in
-                print("A VALUE:", value.status.rawValue) // 2 == OFF, 4 == While using
+                // If the user was not being followed for locations, turn on
+                if ((value.status == .authorizedAlways || value.status == .authorizedWhenInUse) && !self.isFollowing()) {
+                    self.setFollowing(follow: true)
+                } else if (self.isFollowing()){
+                    // If the user was being followed and is not authorized, turn off
+                    self.setFollowing(follow: false)
+                }
             })
             .disposed(by: bag)
     }
+    
+    // Enable disable location values from being used by system
     public func setFollowing(follow: Bool) -> Void {
         self.following = follow
+        if (!follow) {
+            self.locationManager.stopUpdatingLocation()
+            self.locationManager.stopUpdatingHeading()
+        } else {
+            self.locationManager.startUpdatingLocation()
+            self.locationManager.startUpdatingHeading()
+        }
     }
     
     public func isFollowing() -> Bool {
