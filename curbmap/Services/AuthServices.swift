@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 import KeychainAccess
-import Mixpanel
+//import Mixpanel
 
 class AuthServices {
     public static var authServicesBroker = AuthServices()

@@ -1,49 +1,22 @@
 PODS:
-  - Alamofire (4.7.2)
-  - AlamofireImage (3.3.1):
-    - Alamofire (~> 4.5)
+  - Alamofire (4.7.3)
   - KeychainAccess (3.1.1)
-  - Mixpanel-swift (2.2.2):
-    - Mixpanel-swift/Complete (= 2.2.2)
-  - Mixpanel-swift/Complete (2.2.2)
-  - NVActivityIndicatorView (4.2.1):
-    - NVActivityIndicatorView/Presenter (= 4.2.1)
-  - NVActivityIndicatorView/Presenter (4.2.1)
+  - NVActivityIndicatorView (4.4.0):
+    - NVActivityIndicatorView/Presenter (= 4.4.0)
+  - NVActivityIndicatorView/Presenter (4.4.0)
   - OpenLocationCode (0.0.5.2)
-  - PromiseKit (6.2.8):
-    - PromiseKit/CorePromise (= 6.2.8)
-    - PromiseKit/Foundation (= 6.2.8)
-    - PromiseKit/UIKit (= 6.2.8)
-  - PromiseKit/Alamofire (6.2.8):
-    - Alamofire (~> 4.0)
-    - PromiseKit/CorePromise
-  - PromiseKit/CoreLocation (6.2.8):
-    - PromiseKit/CorePromise
-  - PromiseKit/CorePromise (6.2.8)
-  - PromiseKit/Foundation (6.2.8):
-    - PromiseKit/CorePromise
-  - PromiseKit/MapKit (6.2.8):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.2.8):
-    - PromiseKit/CorePromise
   - ReactiveCocoa (7.2.0):
     - ReactiveSwift (~> 3.1)
   - ReactiveSwift (3.1.0):
     - Result (~> 3.2)
   - Result (3.2.4)
-  - SnapKit (4.0.0)
+  - SnapKit (4.0.1)
 
 DEPENDENCIES:
   - Alamofire
-  - AlamofireImage (~> 3.3)
   - KeychainAccess
-  - Mixpanel-swift (from `https://github.com/mixpanel/mixpanel-swift.git`, branch `swift4`)
   - NVActivityIndicatorView
   - OpenLocationCode
-  - PromiseKit (~> 6.0)
-  - PromiseKit/Alamofire
-  - PromiseKit/CoreLocation
-  - PromiseKit/MapKit
   - ReactiveCocoa (~> 7.1)
   - ReactiveSwift (~> 3.1)
   - SnapKit (~> 4.0.0)
@@ -51,39 +24,24 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - AlamofireImage
     - KeychainAccess
     - NVActivityIndicatorView
     - OpenLocationCode
-    - PromiseKit
     - ReactiveCocoa
     - ReactiveSwift
     - Result
     - SnapKit
 
-EXTERNAL SOURCES:
-  Mixpanel-swift:
-    :branch: swift4
-    :git: https://github.com/mixpanel/mixpanel-swift.git
-
-CHECKOUT OPTIONS:
-  Mixpanel-swift:
-    :commit: a057763547eeac578e1effe05a4e26319c8197bd
-    :git: https://github.com/mixpanel/mixpanel-swift.git
-
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
-  Mixpanel-swift: 2cd7aac92ad4e9ba2957479c6e6db9b9170944bb
-  NVActivityIndicatorView: 8068ba3ad39cb44cbaab25d89ff2546b3f092681
+  NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
   OpenLocationCode: 9fcfb120d9e11a91842b91e3517ab432a3c23c3b
-  PromiseKit: 6788ce1a0ed5448b83d4aaf56b9fc49fb7647d32
   ReactiveCocoa: 476dae7ca790f40d30d186a1bd7ebae4290395d5
   ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: 1dadceba2f8d1454b81f62a96f6ae7c56505679c
+PODFILE CHECKSUM: 978f3d805451a7e23d10892a07ead8ce2efd889b
 
 COCOAPODS: 1.5.3

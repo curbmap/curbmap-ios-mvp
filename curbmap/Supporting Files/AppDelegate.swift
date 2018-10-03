@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Mixpanel
+//import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: - TESTING -
         
         // MARK: Mixpanel init
-        Mixpanel.initialize(token: "80e860803728a01261a426e576895b30")
-        Mixpanel.mainInstance().loggingEnabled = true
-        Mixpanel.mainInstance().flushInterval = 5
+//        Mixpanel.initialize(token: "80e860803728a01261a426e576895b30")
+//        Mixpanel.mainInstance().loggingEnabled = true
+//        Mixpanel.mainInstance().flushInterval = 5
         
         AuthServices.authServicesBroker.login { (result) in
             // Broadcast successful login
