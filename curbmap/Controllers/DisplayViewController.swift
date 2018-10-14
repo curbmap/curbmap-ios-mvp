@@ -14,17 +14,9 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var displayMessage: UILabel!
     var image: UIImage?
-    var isLocationEnabled = CLLocationManager.locationServicesEnabled(){
-        didSet {
-            if isLocationEnabled {
-                
-                currentLocation = LocationServices.currentLocation
-            } else {
-                print("unable to retrieve location")
-            }
-        }
-    }
-    var currentLocation: LocationServices?
+    var currentLocation: CLLocation?
+    var currentHeading: CLHeading?
+    
     // MARK: - View Config
     override func viewDidLoad() {
         if let image = image {
@@ -34,14 +26,11 @@ class DisplayViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // get location/device info of user
-        guard let currentLocation = currentLocation else { return }
-        let heading = currentLocation.getHeading()
-        let location = currentLocation.getLocation()
+        // get device info of user
         let currentDevice = UIDevice.current
         let deviceDescription = APIManager.DeviceDescription(name: currentDevice.name, systemName: currentDevice.systemName, systemVersion: currentDevice.systemVersion, model: currentDevice.model)
         
-        if let image = self.image {
+        if let image = self.image, let heading = currentHeading, let location = currentLocation {
             // uploads image and associated location data to server
             APIManager.shared.uploadImage(heading: heading, location: location, deviceDescription: deviceDescription, image: image) { (successMessage, error) in
                 if let error = error {
@@ -52,6 +41,8 @@ class DisplayViewController: UIViewController {
                     
                 }
             }
+        } else {
+            self.displayMessage.text = "Unable to get location/image, please try again"
         }
     }
     

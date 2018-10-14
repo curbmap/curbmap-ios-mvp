@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
-import AlamofireImage
+//import AlamofireImage
 import OpenLocationCode
 import MapKit
 
@@ -43,7 +43,7 @@ class APIManager {
         let headingInString = heading?.trueHeading.description ?? "0.0"
         var olcString: String = ""
         do {
-            olcString = try OpenLocationCode.encode(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+            olcString = try OpenLocationCode.encode(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, codeLength: 11)
         } catch {
             callBack("encoding error", error)
         }
@@ -116,7 +116,7 @@ extension APIManager {
             // Apply compresion
             // print("File size BEFORE \(Double(image.count)/1024.0/1024.0) MB / Image dimension: \(imageOriginal.size)");
             //print("File size AFTER : \(Double(imageResizeData.count)/1024.0/1024.0) MB / Image dimension: \(imageToUpload.size) \(path)");
-            let imageResizeData = UIImageJPEGRepresentation(imageToUpload, JPEG_IMAGE_COMPRESSION)!
+            let imageResizeData = imageToUpload.jpegData(compressionQuality: JPEG_IMAGE_COMPRESSION)!
             
             return imageResizeData
     }

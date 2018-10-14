@@ -35,8 +35,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Keyboards
     func registerForKeyboardNotifications() {
         // Listens for when keyboard shows itself and when hiding
-        defaultCenter.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        defaultCenter.addObserver(self, selector: #selector(keyboardWasHidden(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardWasHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func keyboardWasShown(notification: NSNotification) {
