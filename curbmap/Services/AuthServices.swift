@@ -11,6 +11,13 @@ import KeychainAccess
 //import Mixpanel
 
 class AuthServices {
+    
+    struct Constants {
+        static let success = 1
+        static let failedFind = -2
+        static let failedAuthorized = -1
+    }
+    
     public static var authServicesBroker = AuthServices()
     // MARK: - Login
     /*
@@ -21,8 +28,8 @@ class AuthServices {
     // public let AUTH_HOSTNAME = "https://9fc5160e.ngrok.io" // TESTING TODO XXX
     func login(callback: @escaping (_ result: Int)->Void) -> Void {
         let parameters = [
-            "username": User.currentUser.getUsername(),
-            "password": User.currentUser.getPassword()
+            "username": "curbmaptest",
+            "password": "TestCurbm@p1"
         ]
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"

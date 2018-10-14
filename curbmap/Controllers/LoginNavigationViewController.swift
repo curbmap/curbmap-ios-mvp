@@ -8,12 +8,13 @@
 
 import UIKit
 
-class NavigationViewController: UINavigationController {
+class LoginNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         self.setNavigationBarHidden(true, animated: false)
+        
+        
+        
     }
-    
-    
 
 }

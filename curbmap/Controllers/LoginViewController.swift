@@ -26,10 +26,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Add observer for keyboard notification
         registerForKeyboardNotifications()
         
+        AuthServices.authServicesBroker.login { [weak self] result in
+            switch result {
+            case AuthServices.Constants.success:
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "login"), object: nil)
+                self?.performSegue(withIdentifier: "show_camera", sender: nil)
+            case AuthServices.Constants.failedFind:
+                self?.showAlert(result: AuthServices.Constants.failedFind)
+            case AuthServices.Constants.failedAuthorized :
+                self?.showAlert(result: AuthServices.Constants.failedAuthorized)
+            default:
+                break
+            }
+        }
+        
+        // TODO: Fix autolayout so textfield is properly shown.  Currently it's hiding 
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         // disable scrolling
         scrollView.isScrollEnabled = false
+    }
+    
+    private func showAlert(result: Int) {
+        // TODO:  Create alert view controller displaying login error
     }
     
     // MARK: - Keyboards
