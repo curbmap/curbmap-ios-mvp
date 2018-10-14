@@ -55,7 +55,7 @@ class CameraViewController: UIViewController {
         } else {
             let alert = UIAlertController(title: "Location services", message: "Location services are required for photos to have necessary data. If you wish to help make parking easier, allow location services in settings.", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Settings", style: .default) {(_)-> Void in
-                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                     return
                 }
                 if UIApplication.shared.canOpenURL(settingsUrl) {
