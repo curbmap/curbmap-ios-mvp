@@ -18,7 +18,7 @@
 		D5A7ECB720C3538A001A2629 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8D20C35389001A2629 /* CameraController.swift */; };
 		D5A7ECB820C3538A001A2629 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8E20C35389001A2629 /* DisplayViewController.swift */; };
 		D5A7ECB920C3538A001A2629 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8F20C35389001A2629 /* CameraViewController.swift */; };
-		D5A7ECBB20C3538A001A2629 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC9120C35389001A2629 /* NavigationViewController.swift */; };
+		D5A7ECBB20C3538A001A2629 /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC9120C35389001A2629 /* LoginNavigationViewController.swift */; };
 		D5A7ECBC20C3538A001A2629 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC9220C35389001A2629 /* LoginViewController.swift */; };
 		D5A7ECBD20C3538A001A2629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A7EC9420C3538A001A2629 /* Assets.xcassets */; };
 		D5A7ECBF20C3538A001A2629 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A7EC9620C3538A001A2629 /* LaunchScreen.storyboard */; };
@@ -47,7 +47,7 @@
 		D5A7ECD620C35504001A2629 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8D20C35389001A2629 /* CameraController.swift */; };
 		D5A7ECD720C35504001A2629 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8E20C35389001A2629 /* DisplayViewController.swift */; };
 		D5A7ECD820C35504001A2629 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8F20C35389001A2629 /* CameraViewController.swift */; };
-		D5A7ECDA20C35504001A2629 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC9120C35389001A2629 /* NavigationViewController.swift */; };
+		D5A7ECDA20C35504001A2629 /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC9120C35389001A2629 /* LoginNavigationViewController.swift */; };
 		D5A7ECDB20C35504001A2629 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC9220C35389001A2629 /* LoginViewController.swift */; };
 		D5A7ECDC20C35508001A2629 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7ECB120C3538A001A2629 /* User.swift */; };
 		D5A7ECDD20C3550E001A2629 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7EC8720C35389001A2629 /* LocationServices.swift */; };
@@ -95,7 +95,7 @@
 		D5A7EC8D20C35389001A2629 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		D5A7EC8E20C35389001A2629 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		D5A7EC8F20C35389001A2629 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		D5A7EC9120C35389001A2629 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		D5A7EC9120C35389001A2629 /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
 		D5A7EC9220C35389001A2629 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D5A7EC9420C3538A001A2629 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5A7EC9720C3538A001A2629 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 				D5A7EC8B20C35389001A2629 /* Info.plist */,
 				D5A7ECB020C3538A001A2629 /* Model */,
 				D5A7EC8620C35389001A2629 /* Services */,
-				D5A7EC9320C3538A001A2629 /* Supporting Files */,
 				D5A7ECAD20C3538A001A2629 /* View */,
+				D5A7EC9320C3538A001A2629 /* Supporting Files */,
 			);
 			path = curbmap;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 				D5A7EC8D20C35389001A2629 /* CameraController.swift */,
 				D5A7EC8E20C35389001A2629 /* DisplayViewController.swift */,
 				D5A7EC8F20C35389001A2629 /* CameraViewController.swift */,
-				D5A7EC9120C35389001A2629 /* NavigationViewController.swift */,
+				D5A7EC9120C35389001A2629 /* LoginNavigationViewController.swift */,
 				D5A7EC9220C35389001A2629 /* LoginViewController.swift */,
 			);
 			path = Controllers;
@@ -550,7 +550,7 @@
 				D5A7ECC020C3538A001A2629 /* AppDelegate.swift in Sources */,
 				D5A7ECB820C3538A001A2629 /* DisplayViewController.swift in Sources */,
 				D5A7ECB420C3538A001A2629 /* APIManager.swift in Sources */,
-				D5A7ECBB20C3538A001A2629 /* NavigationViewController.swift in Sources */,
+				D5A7ECBB20C3538A001A2629 /* LoginNavigationViewController.swift in Sources */,
 				D5A7ECB220C3538A001A2629 /* LocationServices.swift in Sources */,
 				D5A7ECB920C3538A001A2629 /* CameraViewController.swift in Sources */,
 				D5A7ECB320C3538A001A2629 /* AuthServices.swift in Sources */,
@@ -565,7 +565,7 @@
 			files = (
 				D5A7ECDB20C35504001A2629 /* LoginViewController.swift in Sources */,
 				D5A7ECDD20C3550E001A2629 /* LocationServices.swift in Sources */,
-				D5A7ECDA20C35504001A2629 /* NavigationViewController.swift in Sources */,
+				D5A7ECDA20C35504001A2629 /* LoginNavigationViewController.swift in Sources */,
 				D5A7ECDF20C3550E001A2629 /* APIManager.swift in Sources */,
 				D5A7ECD620C35504001A2629 /* CameraController.swift in Sources */,
 				D5A7ECDE20C3550E001A2629 /* AuthServices.swift in Sources */,

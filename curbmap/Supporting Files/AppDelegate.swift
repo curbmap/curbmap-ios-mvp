@@ -24,12 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Mixpanel.mainInstance().loggingEnabled = true
 //        Mixpanel.mainInstance().flushInterval = 5
         
-        AuthServices.authServicesBroker.login { (result) in
-            // Broadcast successful login
-            if result == 1 {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "login"), object: nil)
-            }
-        }
         
         // MARK: - END OF TESTING -
         return true
