@@ -7,8 +7,8 @@ PODS:
   - NVActivityIndicatorView (4.4.0):
     - NVActivityIndicatorView/Presenter (= 4.4.0)
   - NVActivityIndicatorView/Presenter (4.4.0)
-  - OpenLocationCode (0.0.5.2)
-  - ReactiveCocoa (8.0.1):
+  - OpenLocationCode (0.0.5.3)
+  - ReactiveCocoa (8.0.2):
     - ReactiveSwift (~> 4.0)
   - ReactiveSwift (4.0.0):
     - Result (~> 4.0)
@@ -18,7 +18,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - KeychainAccess
-  - Mixpanel-swift
+  - Mixpanel-swift (from `https://github.com/mixpanel/mixpanel-swift.git`)
   - NVActivityIndicatorView
   - OpenLocationCode
   - ReactiveCocoa (~> 8.0.1)
@@ -29,7 +29,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - KeychainAccess
-    - Mixpanel-swift
     - NVActivityIndicatorView
     - OpenLocationCode
     - ReactiveCocoa
@@ -37,17 +36,26 @@ SPEC REPOS:
     - Result
     - SnapKit
 
+EXTERNAL SOURCES:
+  Mixpanel-swift:
+    :git: https://github.com/mixpanel/mixpanel-swift.git
+
+CHECKOUT OPTIONS:
+  Mixpanel-swift:
+    :commit: 186981f47adffe301351ab185c144c7d81fd619b
+    :git: https://github.com/mixpanel/mixpanel-swift.git
+
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Mixpanel-swift: 29c1f1d055d325534c47654cdbcd37109bb1fc61
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
-  OpenLocationCode: 9fcfb120d9e11a91842b91e3517ab432a3c23c3b
-  ReactiveCocoa: ed7cbc50f86d4aa8660df5f76b46ae2a82560413
+  OpenLocationCode: 8725918d7186910b76033e6945d8f6c8c7cced93
+  ReactiveCocoa: fbd26e9ba60e98417ee47433e59465a98ed9da0f
   ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: 873c6c33941087d8aabdd503653289040247e9d8
+PODFILE CHECKSUM: e380817140589375e6304775509f937829961e61
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0.beta.2

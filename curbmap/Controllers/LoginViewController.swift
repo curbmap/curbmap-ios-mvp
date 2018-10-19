@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var username: UITextField!
@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let defaultCenter = NotificationCenter.default
     let UIKeyboardFrameEndUserInfoKey = "UIKeyboardFrameEndUserInfoKey"
-
+    
     
     // MARK: - View Configs
     override func viewDidLoad() {
@@ -45,8 +45,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // obtain size of keyboard
         if let info = notification.userInfo, let keyboardInfo = info[UIKeyboardFrameEndUserInfoKey] {
-            var keyboardFrame: CGRect = (keyboardInfo as! NSValue).cgRectValue
-           let keyboardHeight = keyboardFrame.size.height
+            let keyboardFrame: CGRect = (keyboardInfo as! NSValue).cgRectValue
+            let keyboardHeight = keyboardFrame.size.height
             // move contentView frame up by keyboard size
             contentView.frame.origin.y -= keyboardHeight
         }
@@ -85,6 +85,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
-
+    
 }
 

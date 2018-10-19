@@ -9,7 +9,7 @@ pod 'ReactiveSwift', '~> 4.0.0'
 pod 'ReactiveCocoa', '~> 8.0.1'
 pod 'SnapKit', '~> 4.0.0'
 pod 'NVActivityIndicatorView'
-pod 'Mixpanel-swift'
+pod 'Mixpanel-swift', :git => 'https://github.com/mixpanel/mixpanel-swift.git'
 
 target 'curbmap' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks

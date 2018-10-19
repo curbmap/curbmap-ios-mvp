@@ -7,7 +7,7 @@ Open location code framework for swift For original code, see @google
 
 **To install this framework for your project**
 
-* add this line to your Podfile: `pod 'OpenLocationCode' '~>0.0.5.1'`
+* add this line to your Podfile: `pod 'OpenLocationCode' '~>0.0.5.3'`
 * follow that with a pod install (you may have to update if you don't have the newest spec list)
 
 Then, in your project swift file.
@@ -32,6 +32,10 @@ OpenLocationCode.encode(LatLng: (latitude: y, longitude: x), codeLength: Int)
 ```
 OpenLocationCode.decode(code: String)
 ```
+** As of 0.5.3** 10/18/2018
+
+Code is now strictly enforced to be less than or equal to 15 characters. 
+
 
 ** As of 0.5.1** 11/22/2017
 
